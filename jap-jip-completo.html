@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jap Ji Sahib | El Canto del Alma</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Noto+Serif+Gurmukhi:wght@400;700&family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                'void': '#0B0C15', 'gold': '#D4AF37', 'gold-dim': '#8A7120', 'bone': '#E5E5E5',
+                                'paper': '#1A1C29', 'mystic': '#4B0082', 'mystic-light': '#8b5cf6',
+                                'watercolor-1': '#e0c3fc', 'watercolor-2': '#8ec5fc', 'watercolor-3': '#ffd194',
+                            },
+                            fontFamily: {
+                                'title': ['Cinzel', 'serif'], 'body': ['Lato', 'sans-serif'],
+                                'gurmukhi': ['Noto Serif Gurmukhi', 'serif'], 'hand': ['Caveat', 'cursive'],
+                                'poster': ['Playfair Display', 'serif'],
+                            },
+                            animation: { 
+                                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                                'spin-slow': 'spin 12s linear infinite'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <style>
+        body { background-color: #0B0C15; color: #E5E5E5; font-family: 'Lato', sans-serif; overflow-x: hidden; margin: 0; }
+        .fade-in { animation: fadeIn 1.5s ease-in-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0C15; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        .glass-panel { background: rgba(26, 28, 41, 0.95); backdrop-filter: blur(15px); border: 1px solid rgba(212, 175, 55, 0.2); }
+        .guru-gradient { background: linear-gradient(135deg, rgba(20,10,30,0.95) 0%, rgba(10,5,15,0.98) 100%); border: 1px solid rgba(147, 51, 234, 0.4); box-shadow: 0 0 30px rgba(147, 51, 234, 0.2); }
+        
+        /* Modal Sabiduría Extendida */
+        .wisdom-modal { background: rgba(0, 0, 0, 0.98); backdrop-filter: blur(20px); }
+        .wisdom-text { padding-right: 1rem; }
+        .wisdom-text p { margin-bottom: 2rem; line-height: 2; text-align: justify; color: #e2e8f0; font-size: 1.15rem; font-weight: 300; letter-spacing: 0.02em; }
+        .wisdom-text strong { color: #D4AF37; font-weight: 700; font-family: 'Cinzel', serif; }
+        .wisdom-text em { color: #A78BFA; font-style: italic; }
+        .wisdom-text h3 { font-family: 'Cinzel', serif; color: #D4AF37; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; border-bottom: 2px solid rgba(212, 175, 55, 0.3); padding-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .wisdom-text h4 { font-family: 'Cinzel', serif; color: #A78BFA; font-size: 1.8rem; margin-top: 4rem; margin-bottom: 1.5rem; border-left: 4px solid #D4AF37; padding-left: 20px; }
+        .wisdom-text ul { margin-bottom: 2.5rem; list-style-type: none; }
+        .wisdom-text li { margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 2px solid #8b5cf6; position: relative; font-size: 1.1rem; color: #cbd5e1; }
+
+        /* Infografía */
+        .watercolor-card { background-color: #1e1e2e; background-image: radial-gradient(at 10% 10%, rgba(224, 195, 252, 0.15) 0px, transparent 50%), radial-gradient(at 90% 90%, rgba(142, 197, 252, 0.15) 0px, transparent 50%), radial-gradient(at 50% 50%, rgba(255, 209, 148, 0.1) 0px, transparent 50%); border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden; }
+        .watercolor-blob { position: absolute; border-radius: 50%; filter: blur(50px); opacity: 0.5; z-index: 0; }
+        .om-symbol { font-size: 4rem; color: #D4AF37; text-shadow: 0 0 25px rgba(212,175,55,0.8); margin-top: 2rem; display: inline-block; animation: pulse-slow 5s infinite;}
+        
+        .info-box { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); padding: 1.5rem; border-radius: 0.5rem; text-align: center; transition: transform 0.3s ease; }
+        .info-box:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.8); }
+        .info-title { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.2em; color: #D4AF37; margin-bottom: 0.8rem; text-transform: uppercase; }
+        .info-content { font-family: 'Lato', sans-serif; font-size: 1.1rem; color: #fff; font-weight: 400; }
+        .info-footer-phrase { font-family: 'Caveat', cursive; font-size: 1.8rem; color: #E5E5E5; margin-top: 2rem; line-height: 1.4; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+        /* Póster */
+        .poster-container { width: 100%; aspect-ratio: 4/5; background: radial-gradient(circle at center, #1a1025 0%, #000000 100%); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 4px double #D4AF37; box-shadow: 0 0 80px rgba(0,0,0,0.9); }
+        .poster-overlay { position: absolute; inset: 0; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.4; mix-blend-mode: overlay; }
+        .poster-circle { position: absolute; width: 85%; height: 85%; border-radius: 50%; border: 2px solid rgba(212, 175, 55, 0.3); animation: spin-slow 80s linear infinite; }
+
+        .font-gurmukhi { font-family: 'Noto Serif Gurmukhi', serif; }
+        .loader-ring { display: inline-block; width: 24px; height: 24px; }
+        .loader-ring:after { content: " "; display: block; width: 20px; height: 20px; margin: 2px; border-radius: 50%; border: 2px solid #D4AF37; border-color: #D4AF37 transparent #D4AF37 transparent; animation: ring-spin 1.2s linear infinite; }
+        @keyframes ring-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-gold selection:text-void">
+
+    <div id="app" class="min-h-screen flex flex-col relative">
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-transform duration-500 -translate-y-full glass-panel border-b border-white/5">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0 cursor-pointer" onclick="app.goHome()">
+                        <span class="font-title text-gold text-2xl tracking-widest hover:text-white transition-colors">JAP JI SAHIB</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-6">
+                            <button onclick="app.setViewMode('list')" class="nav-btn text-gray-300 hover:text-gold px-4 py-2 rounded-md text-sm font-medium transition-colors uppercase tracking-wide">Lectura Continua</button>
+                            <button onclick="app.setViewMode('contemplation')" class="nav-btn text-gray-300 hover:text-gold px-4 py-2 rounded-md text-sm font-medium transition-colors uppercase tracking-wide">Modo Contemplación</button>
+                            <button onclick="app.toggleMenu()" class="nav-btn text-gold px-4 py-2 rounded-md text-sm font-medium border border-gold/30 hover:bg-gold/10 transition-all uppercase tracking-wide">Índice</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="sidebar" class="fixed inset-0 z-[60] transform translate-x-full transition-transform duration-500 ease-in-out bg-void/95 backdrop-blur-xl">
+            <div class="flex flex-col h-full max-w-md ml-auto bg-paper border-l border-gold/20 shadow-2xl">
+                <div class="flex justify-between items-center p-8 border-b border-white/5">
+                    <h2 class="font-title text-2xl text-gold">Índice Sagrado</h2>
+                    <button onclick="app.toggleMenu()" class="text-gray-400 hover:text-white">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+                <div class="flex-1 overflow-y-auto p-8 space-y-3" id="menu-items"></div>
+            </div>
+        </div>
+
+        <main id="main-content" class="flex-grow relative">
+            <div id="cover" class="absolute inset-0 flex items-center justify-center bg-void z-40 transition-opacity duration-1000">
+                <div class="text-center px-4 fade-in">
+                    <div class="mb-12 opacity-80 flex justify-center">
+                        <svg class="h-32 w-32 text-gold filter drop-shadow-[0_0_20px_rgba(212,175,55,0.6)]" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M50 10 C 45 30, 35 40, 20 40 C 35 40, 45 50, 45 70 L 45 90 L 55 90 L 55 70 C 55 50, 65 40, 80 40 C 65 40, 55 30, 50 10 Z" />
+                            <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path d="M10 50 Q 10 80, 40 90 M 90 50 Q 90 80, 60 90" fill="none" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h1 class="font-title text-5xl md:text-7xl text-gold mb-6 tracking-widest text-shadow-glow">JAP JI SAHIB</h1>
+                    <p class="font-body text-2xl md:text-3xl text-gray-400 mb-16 font-light italic">El Canto del Alma</p>
+                    <button onclick="app.enterExperience()" class="group relative inline-flex items-center justify-center px-12 py-4 overflow-hidden font-title font-medium tracking-tighter text-white bg-transparent border-2 border-gold rounded-sm transition-all duration-300 hover:bg-gold/10 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] cursor-pointer text-lg">
+                        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-gold rounded-full group-hover:w-80 group-hover:h-80 opacity-10"></span>
+                        <span class="relative">ENTRAR EN LA EXPERIENCIA</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="content-viewer" class="hidden min-h-screen pt-28 pb-20 transition-opacity duration-700 opacity-0">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6" id="render-area"></div>
+                <div id="contemplation-nav" class="fixed bottom-0 left-0 w-full glass-panel border-t border-white/5 p-6 hidden justify-between items-center z-30">
+                    <button onclick="app.prevCard()" class="text-gray-400 hover:text-gold transition-colors flex items-center gap-3 text-lg font-title">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg> ANTERIOR
+                    </button>
+                    <span id="progress-indicator" class="text-sm text-gold tracking-[0.3em] font-title text-center mx-4 truncate uppercase font-bold"></span>
+                    <button onclick="app.nextCard()" class="text-gray-400 hover:text-gold transition-colors flex items-center gap-3 text-lg font-title">
+                        SIGUIENTE <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- WISDOM MODAL -->
+        <div id="wisdom-modal" class="fixed inset-0 z-[100] hidden wisdom-modal flex items-center justify-center p-4">
+            <div class="w-full max-w-6xl bg-paper border border-gold/40 rounded-lg shadow-2xl flex flex-col max-h-[95vh] relative">
+                <div class="p-6 border-b border-white/10 flex justify-between items-center bg-void/90 rounded-t-lg">
+                    <h2 class="font-title text-gold tracking-widest uppercase text-lg flex items-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        Sabiduría Divina Monumental
+                    </h2>
+                    <button onclick="app.closeWisdom()" class="text-gray-400 hover:text-white transition-colors"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </div>
+                <div id="wisdom-content" class="flex-1 overflow-y-auto p-12 wisdom-text bg-gradient-to-b from-paper to-void"></div>
+            </div>
+        </div>
+
+        <!-- POSTER MODAL -->
+        <div id="poster-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+            <div class="w-full max-w-xl relative">
+                <button onclick="app.closePoster()" class="absolute -top-12 right-0 text-white hover:text-gold"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                <div id="poster-content" class="w-full h-full flex justify-center items-center"></div>
+                <div class="mt-6 flex justify-center gap-4">
+                    <button onclick="app.downloadPoster()" class="bg-gold text-void px-8 py-3 rounded font-bold hover:bg-white transition-colors uppercase tracking-widest shadow-lg">Descargar Arte</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // === DATOS SAGRADOS COMPLETOS ===
+        const TEXT_DATA = [
+            {
+                id: "mool-mantra", title: "Mool Mantra",
+                gurmukhi: "ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥",
+                transcription: "Ek ong kar, sat nam, karta purk, nirbo, nirber, akal murt, ajuni, sei bang, gur prasad.",
+                translation: "Un Creador, Verdad es Su Nombre, Hacedor de Todo, Sin Miedo, Sin Ira, Inmortal, No Nacido, Auto-iluminado, Por la Gracia del Gurú.",
+                essence: "Adopta una actitud de unidad radical.",
+                benefits: "Elimina la fatalidad y cambia el destino.",
+                contemplation: "Frecuencia base universal.",
+                triad: { vibration: "Ek Ong Kar", action: "Alinear", state: "Unidad" },
+                closure: "La brújula hacia tu verdadero Norte: la Unidad."
+            },
+            {
+                id: "jap-salok", title: "Jap & Salok Inicial",
+                gurmukhi: "॥ ਜਪੁ ॥\nਆਦਿ ਸਚੁ ਜੁਗਾਦਿ ਸਚੁ ॥ ਹੈ ਭੀ ਸਚੁ ਨਾਨਕ ਹੋਸੀ ਭੀ ਸਚੁ ॥੧॥",
+                transcription: "Jap.\nad sach, jugad sach, hebi sach, nanak josi bi sach.",
+                translation: "¡Medita! Verdad en el Principio. Verdad a través de las Eras. Verdad Ahora. Nanak, la Verdad será por siempre.",
+                essence: "Detén la prisa y respira.",
+                benefits: "Estabilidad mental absoluta.",
+                contemplation: "Rompe la ilusión del tiempo lineal.",
+                triad: { vibration: "Aad Sach", action: "Meditar", state: "Eternidad" },
+                closure: "Anclaje en lo que nunca muere."
+            },
+            // PAURIS 1-38 COMPLETOS
+            {
+                id: "pauri-1",
+                title: "Pauri 1",
+                gurmukhi: "ਸੋਚੈ ਸੋਚਿ ਨ ਹੋਵਈ ਜੇ ਸੋਚੀ ਲਖ ਵਾਰ ॥ ਚੁਪੈ ਚੁਪ ਨ ਹੋਵਈ ਜੇ ਲਾਇ ਰਹਾ ਲਿਵ ਤਾਰ ॥ ਭੁਖਿਆ ਭੁਖ ਨ ਉਤਰੀ ਜੇ ਬੰਨਾ ਪੁਰੀਆ ਭਾਰ ॥ ਸਹਸ ਸਿਆਣਪਾ ਲਖ ਹੋਹਿ ਤ ਇਕ ਨ ਚਲੈ ਨਾਲਿ ॥ ਕਿਵ ਸਚਿਆਰਾ ਹੋਈਐ ਕਿਵ ਕੂੜੈ ਤੁਟੈ ਪਾਲਿ ॥ ਹੁਕਮਿ ਰਜਾਈ ਚਲਣਾ ਨਾਨਕ ਲਿਖਿਆ ਨਾਲਿ ॥੧॥",
+                transcription: "soche soch na jovai, je sochi lak var. chupe chup na jovai, je lae raja liv tar. bukian buk na utri, je bana puria bar. sajes sianpa lak joj, ta ik na chale nal. kiv sachiara joie, kiv kure tute pal. jukam rajai chalna, nanak likia nal.",
+                translation: "Por pensar, Él no puede ser pensado, aunque lo piense cien mil veces. Por callar, el silencio no llega, aunque me absorba en meditación profunda. El hambre de los hambrientos no se sacia, aunque carguen con el peso de los mundos. De miles de astucias, ni una sola te acompaña al final. ¿Cómo entonces ser un ser de Verdad? ¿Cómo romper el velo de la ilusión? Caminando bajo la Voluntad del Hukam (Orden Divina), Oh Nanak, que está escrita con nosotros.",
+                essence: "Cuando algo salga mal hoy, di: 'Esto es la Voluntad' y suelta la tensión.",
+                benefits: "Combate la depresión profunda y la soledad del ego.",
+                contemplation: "La respuesta es Hukam Rajai Chalna: Caminar bajo la Voluntad Divina.",
+                triad: { vibration: "Hukam", action: "Rendición", state: "Paz" },
+                closure: "Deja de luchar contra la corriente y fluye con Dios."
+            },
+            {
+                id: "pauri-2",
+                title: "Pauri 2",
+                gurmukhi: "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥ ਹੁਕਮੀ ਹੋਵਨਿ ਜੀਅ ਹੁਕਮਿ ਮਿਲੈ ਵਡਿਆਈ ॥ ਹੁਕਮੀ ਉਤਮੁ ਨੀਚੁ ਹੁਕਮਿ ਲਿਖਿ ਦੁਖ ਸੁਖ ਪਾਈਅਹਿ ॥ ਇਕਨਾ ਹੁਕਮੀ ਬਖਸੀਸ ਇਕਿ ਹੁਕਮੀ ਸਦਾ ਭਵਾਈਅਹਿ ॥ ਹੁਕਮੈ ਅੰਦਰਿ ਸਭੁ ਕੋ ਬਾਹਰਿ ਹੁਕਮ ਨ ਕੋਇ ॥ ਨਾਨਕ ਹੁਕਮੈ ਜੇ ਬੁਝੈ ਤ ਹਉਮੈ ਕਹੈ ਨ ਕੋਇ ॥੨॥",
+                transcription: "jukmi jovan akar, jukam na kajia jai. jukmi jovan jia, jukam mile vadiai. jukmi utam nich, jukam lik duk suk paiaj. ikna jukmi baksis, ik jukmi sada bvaiaj. jukme andar sab ko, bajar jukam na koe. nanak jukme je buje, ta jome kaje na koe.",
+                translation: "Por Su Orden, los cuerpos son creados; Su Orden no puede ser descrita. Por Su Orden, las almas existen; por Su Orden, se obtiene grandeza. Por Su Orden, se es alto o bajo; por Su Orden, se obtiene dolor o placer. Algunos reciben bendiciones por Su Orden; otros vagan en ciclos por siempre. Todo está bajo Su Orden; nada está fuera de ella. Oh Nanak, si uno comprende la Orden, no habla desde el ego.",
+                essence: "Observa tus juicios sin etiquetarlos, solo obsérvalos.",
+                benefits: "Alivia el sufrimiento al comprender la justicia universal.",
+                contemplation: "Define la naturaleza operativa del universo. No hay azar, solo una Inteligencia Infinita actuando.",
+                triad: { vibration: "Hukami", action: "Aceptar", state: "Sin Ego" },
+                closure: "El ego calla ante la majestad de la Orden Divina."
+            },
+            {
+                id: "pauri-3",
+                title: "Pauri 3",
+                gurmukhi: "ਗਾਵੈ ਕੋ ਤਾਣੁ ਹੋਵੈ ਕਿਸੈ ਤਾਣੁ ॥ ਗਾਵੈ ਕੋ ਦਾਤਿ ਜਾਣੈ ਨੀਸਾਣੁ ॥ ਗਾਵੈ ਕੋ ਗੁਣ ਵਡਿਆਈਆ ਚਾਰ ॥ ਗਾਵੈ ਕੋ ਵਿਦਿਆ ਵਿਖਮੁ ਵੀਚਾਰੁ ॥ ਗਾਵੈ ਕੋ ਸਾਜਿ ਕਰੇ ਤਨੁ ਖੇਹ ॥ ਗਾਵੈ ਕੋ ਜੀਅ ਲੈ ਫਿਰਿ ਦੇਹ ॥ ਗਾਵੈ ਕੋ ਜਾਪੈ ਦਿਸੈ ਦੂਰਿ ॥ ਗਾਵੈ ਕੋ ਵੇਖੈ ਹਾਦਰਾ ਹਦੂਰਿ ॥ ਕਥਨਾ ਕਥੀ ਨ ਆਵੈ ਤੋਟਿ ॥ ਕਥਿ ਕਥਿ ਕਥੀ ਕੋਟੀ ਕੋਟਿ ਕੋਟਿ ॥ ਦੇਦਾ ਦੇ ਲੈਦੇ ਥਕਿ ਪਾਹਿ ॥ ਜੁਗਾ ਜੁਗੰਤਰਿ ਖਾਹੀ ਖਾਹਿ ॥ ਹੁਕਮੀ ਹੁਕਮੁ ਚਲਾਏ ਰਾਹੁ ॥ ਨਾਨਕ ਵਿਗਸੈ ਵੇਪਰਵਾਹੁ ॥੩॥",
+                transcription: "gave ko tan jovai kise tan. gave ko dat jane nisan. gave ko gun vadiaia char. gave ko vidia vikam vichar. gave ko saj kare tan kej. gave ko jia le fir dej. gave ko jape dise dur. gave ko veke jadra jadur. katna kati na ave tot. kat kat kati koti kot kot. deda de lede tak paj. juga jugantar kaji kaj. jukmi jukam chalae raj. nanak vigse veparvaj.",
+                translation: "Algunos cantan Su poder, ¿quién tiene ese poder? Algunos cantan Sus regalos y conocen Su signo. Algunos cantan Sus gloriosas virtudes y grandeza. Algunos cantan Su conocimiento, difícil de comprender. Algunos cantan que Él crea y reduce a polvo. Algunos cantan que Él quita la vida y la devuelve. Algunos cantan que Él parece lejano. Algunos cantan que Él ve y está presente. No hay fin para Sus descripciones, aunque millones lo intenten millones de veces. El Dador da; los receptores se cansan de recibir. A través de las eras, comen y consumen. El Comandante, por Su Orden, dirige el camino. Nanak dice: Él florece, despreocupado.",
+                essence: "Identifica tres cosas que tienes y di: 'Es suficiente'.",
+                benefits: "Eleva la autoestima y cura la sensación de carencia.",
+                contemplation: "El Dador incansable frente al receptor limitado.",
+                triad: { vibration: "Veparvaju", action: "Alabar", state: "Suficiencia" },
+                closure: "El Dador sigue dando incansablemente; confía en Su providencia."
+            },
+            {
+                id: "pauri-4",
+                title: "Pauri 4",
+                gurmukhi: "ਸਾਚਾ ਸਾਹਿਬੁ ਸਾਚੁ ਨਾਇ ਭਾਖਿਆ ਭਾਉ ਅਪਾਰੁ ॥ ਆਖਹਿ ਮੰਗਹਿ ਦੇਹਿ ਦੇਹਿ ਦਾਤਿ ਕਰੇ ਦਾਤਾਰੁ ॥ ਫੇਰਿ ਕਿ ਅਗੈ ਰਖੀਐ ਜਿਤੁ ਦਿਸੈ ਦਰਬਾਰੁ ॥ ਮੁਹੌ ਕਿ ਬੋਲਣੁ ਬੋਲੀਐ ਜਿਤੁ ਸੁਣਿ ਧਰੇ ਪਿਆਰੁ ॥ ਅੰਮ੍ਰਿਤ ਵੇਲਾ ਸਚੁ ਨਾਉ ਵਡਿਆਈ ਵੀਚਾਰੁ ॥ ਕਰਮੀ ਆਵੈ ਕਪੜਾ ਨਦਰੀ ਮੋਖੁ ਦੁਆਰੁ ॥ ਨਾਨਕ ਏਵੈ ਜਾਣੀਐ ਸਭੁ ਆਪੇ ਸਚਿਆਰੁ ॥੪॥",
+                transcription: "sacha sahib sach nae, bakia bao apar. ake mangue de de, dat kare datar. fer ki ague rakie, jit dise darbar. mujo ki bolan bolie, jit sun dare piar. amrit vela sach nao, vadiai vichar. karmi ave kapra, nadri mok duar. nanak eve janie, sab ape sachiar.",
+                translation: "El Señor es Verdadero, Verdadero es Su Nombre; lenguaje de amor infinito. Piden y ruegan: 'Danos, danos', y el Dador da Sus dones. ¿Qué, entonces, podemos poner ante Él para ver Su Corte? ¿Qué palabras podemos hablar para evocar Su Amor? En el Amrit Vela (antes del amanecer), medita en Su Verdadero Nombre y Su Grandeza. Por el karma de acciones pasadas se obtiene este manto (cuerpo). Por Su Gracia, se encuentra la Puerta de la Liberación. Nanak, sabe esto: Él es Todo en Sí mismo.",
+                essence: "Levántate 15 minutos antes y dedica ese silencio a tu alma.",
+                benefits: "Elimina la pobreza de espíritu y atrae oportunidades.",
+                contemplation: "El lenguaje de Dios es el Amor. La moneda es Amrit Vela.",
+                triad: { vibration: "Amrit Vela", action: "Meditar", state: "Gracia" },
+                closure: "El Amor es la única moneda en el Reino de la Verdad."
+            },
+            {
+                id: "pauri-5",
+                title: "Pauri 5",
+                gurmukhi: "ਥਾਪਿਆ ਨ ਜਾਇ ਕੀਤਾ ਨ ਹੋਇ ॥ ਆਪੇ ਆਪਿ ਨਿਰੰਜਨੁ ਸੋਇ ॥ ਜਿਨਿ ਸੇਵਿਆ ਤਿਨਿ ਪਾਇਆ ਮਾਨੁ ॥ ਨਾਨਕ ਗਾਵੀਐ ਗੁਣੀ ਨਿਧਾਨੁ ॥ ਗਾਵੀਐ ਸੁਣੀਐ ਮਨਿ ਰਖੀਐ ਭਾਉ ॥ ਦੁਖੁ ਪਰਹਰਿ ਸੁਖੁ ਘਰਿ ਲੈ ਜਾਇ ॥ ਗੁਰਮੁਖਿ ਨਾਦੰ ਗੁਰਮੁਖਿ ਵੇਦੰ ਗੁਰਮੁਖਿ ਰਹਿਆ ਸਮਾਈ ॥ ਗੁਰੁ ਈਸਰੁ ਗੁਰੁ ਗੋਰਖੁ ਬਰਮਾ ਗੁਰੁ ਪਾਰਬਤੀ ਮਾਈ ॥ ਜੇ ਹਉ ਜਾਣਾ ਆਖਾ ਨਾਹੀ ਕਹਣਾ ਕਥਨੁ ਨ ਜਾਈ ॥ ਗੁਰਾ ਇਕ ਦੇਹਿ ਬੁਝਾਈ ॥ ਸਭਨਾ ਜੀਆ ਕਾ ਇਕੁ ਦਾਤਾ ਸੋ ਮੈ ਵਿਸਰਿ ਨ ਜਾਈ ॥੫॥",
+                transcription: "tapia na jae kita na joe. ape ap niranjan soe. jin sevia tin paia man. nanak gavie guni nidan. gavie sunie man rakie bao. duk parjar suk gar le jae. gurmuk nadan gurmuk vedan gurmuk rajia samai. guru isar guru gorak barma, guru parbati mai. je jo jana aka naji, kajna katan na jai. gura ik dej bujai. sabna jia ka ik data, so me visar na jai.",
+                translation: "Él no puede ser instalado, Él no puede ser creado. Él es Él mismo, Inmaculado y Puro. Quienes le sirven obtienen honor. Nanak, canta las alabanzas del Tesoro de Virtudes. Canta, escucha y mantén el amor en tu mente. Tu dolor será eliminado y la paz vendrá a tu hogar. El Guru es el Sonido, el Guru es la Sabiduría, el Guru es Quien permanece en todo. El Guru es Shiva, el Guru es Vishnu y Brahma; el Guru es Parvati y Lakshmi. Incluso si lo supiera, no podría describirlo; es indescriptible. El Guru me ha dado una comprensión: que no olvide al Único Dador de todas las almas.",
+                essence: "Realiza un acto de servicio anónimo hoy.",
+                benefits: "Otorga éxito espiritual y protección.",
+                contemplation: "Desmantela la idolatría. El Guru encarna todas las funciones divinas.",
+                triad: { vibration: "Niranjan", action: "Servir", state: "Éxito" },
+                closure: "El recuerdo constante del Único Dador es la cura para el olvido."
+            },
+            {
+                id: "pauri-6",
+                title: "Pauri 6",
+                gurmukhi: "ਤੀਰਥਿ ਨਾਵਾ ਜੇ ਤਿਸੁ ਭਾਵਾ ਵਿਣੁ ਭਾਣੇ ਕਿ ਨਾਇ ਕਰੀ ॥ ਜੇਤੀ ਸਿਰਠਿ ਉਪਾਈ ਵੇਖਾ ਵਿਣੁ ਕਰਮਾ ਕਿ ਮਿਲੈ ਲਈ ॥ ਮਤਿ ਵਿਚਿ ਰਤਨ ਜਵਾਹਰ ਮਾਣਿਕ ਜੇ ਇਕ ਗੁਰ ਕੀ ਸਿਖ ਸੁਣੀ ॥ ਗੁਰਾ ਇਕ ਦੇਹਿ ਬੁਝਾਈ ॥ ਸਭਨਾ ਜੀਆ ਕਾ ਇਕੁ ਦਾਤਾ ਸੋ ਮੈ ਵਿਸਰਿ ਨ ਜਾਈ ॥੬॥",
+                transcription: "tirat nava je tis bava, vin bane ki nae kari. jeti sirat upai veka, vin karma ki mile lai. mat vich ratan javajar manik, je ik gur ki sik suni. gura ik dej bujai. sabna jia ka ik data, so me visar na jai.",
+                translation: "Si le agrado a Él, ese es mi baño de peregrinación. Sin complacerle, ¿de qué sirven los baños rituales? Miro toda la creación que Él ha formado: sin karma (gracia), ¿quién recibe qué? Dentro de la mente hay gemas, joyas y rubíes, si escuchas una sola enseñanza del Guru. El Guru me ha dado una comprensión: que no olvide al Único Dador de todas las almas.",
+                essence: "Ante una duda, escucha tu propia respuesta interna.",
+                benefits: "Disipa la limitación espiritual. Otorga riqueza interna.",
+                contemplation: "Las verdaderas riquezas (gemas, rubíes) están dentro de tu propia mente.",
+                triad: { vibration: "Mati Vich", action: "Escuchar", state: "Gemas" },
+                closure: "Las joyas están dentro de tu propia mente, esperando ser escuchadas."
+            },
+            {
+                id: "pauri-7",
+                title: "Pauri 7",
+                gurmukhi: "ਜੇ ਜੁਗ ਚਾਰੇ ਆਰਜਾ ਹੋਰ ਦਸੂਣੀ ਹੋਇ ॥ ਨਵਾ ਖੰਡਾ ਵਿਚਿ ਜਾਣੀਐ ਨਾਲਿ ਚਲੈ ਸਭੁ ਕੋਇ ॥ ਚੰਗਾ ਨਾਉ ਰਖਾਇ ਕੈ ਜਸੁ ਕੀਰਤਿ ਜਗਿ ਲੇਇ ॥ ਜੇ ਤਿਸੁ ਨਦਰਿ ਨ ਆਵਈ ਤ ਵਾਤ ਨ ਪੁਛੈ ਕੇ ॥ ਕੀਟਾ ਅੰਦਰਿ ਕੀਟੁ ਕਰਿ ਦੋਸੀ ਦੋਸੁ ਧਰੇ ॥ ਨਾਨਕ ਨਿਰਗੁਣਿ ਗੁਣੁ ਕਰੇ ਗੁਣਵੰਤਿਆ ਗੁਣੁ ਦੇ ॥ ਤੇਹਾ ਕੋਇ ਨ ਸੁਝਈ ਜਿ ਤਿਸੁ ਗੁਣੁ ਕੋਇ ਕਰੇ ॥੭॥",
+                transcription: "je jug chare arja, jor dasuni joe. nava kanda vich janie, nal chale sab koe. changa nao rakae ke, jas kirat jag le. je tis nadar na avai, ta vat na puche ke. kita andar kit kar, dosi dos dare. nanak nirgun gun kare, gunvantia gun de. teja koe na sujei, ji tis gun koe kare.",
+                translation: "Si uno viviera a través de las cuatro eras, o incluso diez veces más. Si fuera conocido en los nueve continentes y todos lo siguieran. Si tuviera un buen nombre y fama y alabanza por todo el mundo. Si la Mirada de Gracia de Dios no está sobre él, nadie le preguntará ni cómo está. Sería considerado un gusano entre los gusanos; e incluso los pecadores lo culparían. Oh Nanak, Dios otorga virtud a quienes no la tienen, y da más virtud a los virtuosos. No puedo imaginar a nadie que pueda darle virtud a Él.",
+                essence: "Haz algo bueno que nadie sepa ni pueda aplaudir.",
+                benefits: "Sana la avidez de poder. Otorga perspectiva sobre la fama.",
+                contemplation: "La fama mundana es vacía sin la conexión divina (Nadar).",
+                triad: { vibration: "Nadar", action: "Humildad", state: "Sin Codicia" },
+                closure: "Sin la Mirada de Gracia, la fama mundana no vale nada."
+            },
+            {
+                id: "pauri-8",
+                title: "Pauri 8",
+                gurmukhi: "ਸੁਣਿਐ ਸਿਧ ਪੀਰ ਸੁਰਿ ਨਾਥ ॥ ਸੁਣਿਐ ਧਰਤਿ ਧਵਲ ਆਕਾਸ ॥ ਸੁਣਿਐ ਦੀਪ ਲੋਅ ਪਾਤਾਲ ॥ ਸੁਣਿਐ ਪੋਹਿ ਨ ਸਕੈ ਕਾਲੁ ॥ ਨਾਨਕ ਭਗਤਾ ਸਦਾ ਵਿਗਾਸੁ ॥ ਸੁਣਿਐ ਦੂਖ ਪਾਪ ਕਾ ਨਾਸੁ ॥੮॥",
+                transcription: "sunie sid pir sur nat. sunie darat daval akas. sunie dip loa patal. sunie poje na sake kal. nanak bagta sada vigas. sunie duk pap ka nas.",
+                translation: "Escuchando, uno se convierte en un Sidha, un Pir, un dios y un maestro del yoga. Escuchando, se comprende la tierra, el toro que la sostiene y los cielos. Escuchando, se conocen los continentes, los mundos y las regiones inferiores. Escuchando, la muerte no puede tocarte. Oh Nanak, los devotos están siempre en dicha. Escuchando, el dolor y el pecado son destruidos.",
+                essence: "Escucha a alguien hoy sin interrumpir ni planear respuesta.",
+                benefits: "Elimina el dolor y el miedo a la muerte.",
+                contemplation: "Absorber la vibración del Naam para transformar el alma.",
+                triad: { vibration: "Suniai", action: "Absorción", state: "Siddha" },
+                closure: "La escucha profunda eleva al ser humano por encima del tiempo y la muerte."
+            },
+            {
+                id: "pauri-9",
+                title: "Pauri 9",
+                gurmukhi: "ਸੁਣਿਐ ਈਸਰੁ ਬਰਮਾ ਇੰਦੁ ॥ ਸੁਣਿਐ ਮੁਖਿ ਸਾਲਾਹਣ ਮੰਦੁ ॥ ਸੁਣਿਐ ਜੋਗ ਜੁਗਤਿ ਤਨਿ ਭੇਦ ॥ ਸੁਣਿਐ ਸਾਸਤ ਸਿਮ੍ਰਿਤਿ ਵੇਦ ॥ ਨਾਨਕ ਭਗਤਾ ਸਦਾ ਵਿਗਾਸੁ ॥ ਸੁਣਿਐ ਦੂਖ ਪਾਪ ਕਾ ਨਾਸੁ ॥੯॥",
+                transcription: "sunie isar barma ind. sunie muk salajan mand. sunie jog jugat tan bed. sunie sasat simrat ved. nanak bagta sada vigas. sunie duk pap ka nas.",
+                translation: "Escuchando, uno se convierte en Shiva, Brahma e Indra. Escuchando, incluso los malos comienzan a alabar a Dios. Escuchando, se conoce el camino del Yoga y los secretos del cuerpo. Escuchando, se comprenden las escrituras sagradas. Oh Nanak, los devotos están siempre en dicha. Escuchando, el dolor y el pecado son destruidos.",
+                essence: "Si escuchas negatividad, transfórmala con silencio o bondad.",
+                benefits: "Otorga autoridad espiritual y expansión.",
+                contemplation: "La escucha profunda revela el conocimiento esotérico sin esfuerzo.",
+                triad: { vibration: "Vigas", action: "Alabanza", state: "Autoridad" },
+                closure: "La escucha transforma la negatividad en alabanza y otorga autoridad."
+            },
+            {
+                id: "pauri-10",
+                title: "Pauri 10",
+                gurmukhi: "ਸੁਣਿਐ ਸਤੁ ਸੰਤੋਖੁ ਗਿਆਨੁ ॥ ਸੁਣਿਐ ਅਠਸਠਿ ਕਾ ਇਸਨਾਨੁ ॥ ਸੁਣਿਐ ਪੜਿ ਪੜਿ ਪਾਵਹਿ ਮਾਨੁ ॥ ਸੁਣਿਐ ਲਾਗੈ ਸਹਜਿ ਧਿਆਨੁ ॥ ਨਾਨਕ ਭਗਤਾ ਸਦਾ ਵਿਗਾਸੁ ॥ ਸੁਣਿਐ ਦੂਖ ਪਾਪ ਕਾ ਨਾਸੁ ॥੧੦॥",
+                transcription: "sunie sat santok guian. sunie atsat ka isnan. sunie par par pavaj man. sunie lagae sajaj dian. nanak bagta sada vigas. sunie duk pap ka nas.",
+                translation: "Escuchando, se obtiene verdad, contentamiento y conocimiento divino. Escuchando, se obtiene el mérito de bañarse en los sesenta y ocho lugares sagrados. Escuchando y leyendo, se obtiene honor. Escuchando, la mente se absorbe fácilmente en meditación (Sahaj Dhyan). Oh Nanak, los devotos están siempre en dicha. Escuchando, el dolor y el pecado son destruidos.",
+                essence: "Habla solo la verdad hoy. Siente su poder.",
+                benefits: "Otorga gracia y personalidad magnética.",
+                contemplation: "La escucha trae las virtudes internas (Sat, Santok).",
+                triad: { vibration: "Sahaj Dhyan", action: "Pureza", state: "Gracia" },
+                closure: "Escuchar otorga la pureza interna que supera cualquier peregrinaje externo."
+            },
+            {
+                id: "pauri-11",
+                title: "Pauri 11",
+                gurmukhi: "ਸੁਣਿਐ ਸਰਾ ਗੁਣਾ ਕੇ ਗਾਹ ॥ ਸੁਣਿਐ ਸੇਖ ਪੀਰ ਪਾਤਿਸਾਹ ॥ ਸੁਣਿਐ ਅੰਧੇ ਪਾਵਹਿ ਰਾਹੁ ॥ ਸੁਣਿਐ ਹਾਥ ਹੋਵੈ ਅਸਗਾਹੁ ॥ ਨਾਨਕ ਭਗਤਾ ਸਦਾ ਵਿਗਾਸੁ ॥ ਸੁਣਿਐ ਦੂਖ ਪਾਪ ਕਾ ਨਾਸੁ ॥੧੧॥",
+                transcription: "sunie sara guna ke gah. sunie sek pir patshah. sunie ande pave rah. sunie hat hovai asgah. nanak bagta sada vigas. sunie duk pap ka nas.",
+                translation: "Escuchando, uno se sumerge en las profundas virtudes. Escuchando, uno se convierte en un líder espiritual, un maestro, un rey. Escuchando, los ciegos encuentran el camino. Escuchando, lo inalcanzable se vuelve accesible. Oh Nanak, los devotos están siempre en éxtasis. Escuchando, el dolor y el pecado son destruidos.",
+                essence: "Escucha hoy algo que te inspire a ser mejor persona.",
+                benefits: "Te dará la virtud y te conectará con tu nobleza interior.",
+                contemplation: "La escucha profunda transforma lo inalcanzable en accesible.",
+                triad: { vibration: "Asgahu", action: "Sumergirse", state: "Virtud" },
+                closure: "La escucha pura abre caminos donde no los había."
+            },
+            {
+                id: "pauri-12",
+                title: "Pauri 12",
+                gurmukhi: "ਮੰਨੇ ਕੀ ਗਤਿ ਕਹੀ ਨ ਜਾਇ ॥ ਜੇ ਕੋ ਕਹੈ ਪਿਛੈ ਪਛੁਤਾਇ ॥ ਕਾਗਦਿ ਕਲਮ ਨ ਲਿਖਣਹਾਰੁ ॥ ਮੰਨੇ ਕਾ ਬਹਿ ਕਰਨਿ ਵੀਚਾਰੁ ॥ ਐਸਾ ਨਾਮੁ ਨਿਰੰਜਨੁ ਹੋਇ ॥ ਜੇ ਕੋ ਮੰਨਿ ਜਾਣੈ ਮਨਿ ਕੋਇ ॥੧੨॥",
+                transcription: "mane ki gat kahi na jae. je ko kaha piche pachtae. kagad kalam na likanhar. mane ka beh karin vichar. aesa nam niranjan hoe. je ko man jane man koe.",
+                translation: "El estado de conciencia de quien acepta la Realidad no puede ser descrito. Si alguien lo intentara, luego se arrepentiría. No hay papel, pluma o escritor capaz de describir lo que experimenta quien acepta en estado de meditación. Así es el Nombre: hace que la persona se vuelva pura cuando comprende en profundidad el poder de la aceptación.",
+                essence: "Acepta una situación difícil hoy sin resistencia y observa qué sucede.",
+                benefits: "Otorga autoestima, respeto por uno mismo y conexión con el ser superior.",
+                contemplation: "La aceptación profunda trasciende todas las descripciones.",
+                triad: { vibration: "Niranjan", action: "Aceptar", state: "Pureza" },
+                closure: "La aceptación purifica más que mil rituales."
+            },
+            {
+                id: "pauri-13",
+                title: "Pauri 13",
+                gurmukhi: "ਮੰਨੈ ਸੁਰਤਿ ਹੋਵੈ ਮਨਿ ਬੁਧਿ ॥ ਮੰਨੈ ਸਗਲ ਭਵਣ ਕੀ ਸੁਧਿ ॥ ਮੰਨੈ ਮੁਹਿ ਛੋਟਾ ਨ ਖਾਇ ॥ ਮੰਨੈ ਜਮ ਕੈ ਸਾਥਿ ਨ ਜਾਇ ॥ ਐਸਾ ਨਾਮੁ ਨਿਰੰਜਨੁ ਹੋਇ ॥ ਜੇ ਕੋ ਮੰਨਿ ਜਾਣੈ ਮਨਿ ਕੋਇ ॥੧੩॥",
+                transcription: "mane surat hovai man budh. mane sagal bhavan ki sudh. mane muh chota na khae. mane jam kai sat na jae. aesa nam niranjan hoe. je ko man jane man koe.",
+                translation: "Quien acepta tiene el poder de escuchar y una mente intuitiva. Quien acepta obtiene el conocimiento del universo entero. Quien acepta no es humillado ni se deja asustar por la muerte. Así es el Nombre: hace que la persona se vuelva pura cuando comprende en profundidad el poder de la aceptación.",
+                essence: "Confía hoy en tu intuición antes que en la lógica.",
+                benefits: "Otorga conocimiento del infinito y profunda intuición.",
+                contemplation: "La aceptación abre los canales de la percepción universal.",
+                triad: { vibration: "Surat", action: "Confiar", state: "Intuición" },
+                closure: "La aceptación disuelve el miedo a la muerte."
+            },
+            {
+                id: "pauri-14",
+                title: "Pauri 14",
+                gurmukhi: "ਮੰਨੈ ਮਾਰਗਿ ਠਾਕ ਨ ਪਾਇ ॥ ਮੰਨੈ ਪਤਿ ਸਿਉ ਪਰਗਟੁ ਜਾਇ ॥ ਮੰਨੈ ਮਗੁ ਨ ਚਲੈ ਪੰਥੁ ॥ ਮੰਨੈ ਧਰਮ ਸੇਤੀ ਸਨਬੰਧੁ ॥ ਐਸਾ ਨਾਮੁ ਨਿਰੰਜਨੁ ਹੋਇ ॥ ਜੇ ਕੋ ਮੰਨਿ ਜਾਣੈ ਮਨਿ ਕੋਇ ॥੧੪॥",
+                transcription: "mane marag thak na pae. mane pat sio pargat jae. mane mag na chale panth. mane daram seti sanbandh. aesa nam niranjan hoe. je ko man jane man koe.",
+                translation: "Quien acepta tiene su camino libre de obstáculos. Quien acepta es radiante y honorable. Quien acepta está desapegado de los asuntos mundanos. Quien acepta abraza el dharma. Así es el Nombre: hace que la persona se vuelva pura cuando comprende en profundidad el poder de la aceptación.",
+                essence: "Sigue tu propio camino hoy sin compararte con otros.",
+                benefits: "Te mostrará el camino cuando no puedas encontrar tu dirección.",
+                contemplation: "La aceptación crea un camino donde no había sendero.",
+                triad: { vibration: "Dharma", action: "Seguir", state: "Desapego" },
+                closure: "La aceptación ilumina el camino del honor."
+            },
+            {
+                id: "pauri-15",
+                title: "Pauri 15",
+                gurmukhi: "ਮੰਨੈ ਪਾਵਹਿ ਮੋਖੁ ਦੁਆਰੁ ॥ ਮੰਨੈ ਪਰਵਾਰੈ ਸਾਧਾਰੁ ॥ ਮੰਨੈ ਤਰੈ ਤਾਰੇ ਗੁਰ ਸਿਖ ॥ ਮੰਨੈ ਨਾਨਕ ਭਵਹਿ ਨ ਭਿਖ ॥ ਐਸਾ ਨਾਮੁ ਨਿਰੰਜਨੁ ਹੋਇ ॥ ਜੇ ਕੋ ਮੰਨਿ ਜਾਣੈ ਮਨਿ ਕੋਇ ॥੧੫॥",
+                transcription: "mane pave mokh duar. mane parvare sadhar. mane tarai tare gur sikh. mane nanak bhavah na bhikh. aesa nam niranjan hoe. je ko man jane man koe.",
+                translation: "Quien acepta abre las puertas de la liberación. Quien acepta salva también a su familia. Quien acepta atraviesa el océano de la vida y hace que otros lo naden también. Quien acepta, Oh Nanak, no volverá a vagar en este mundo como mendigo. Así es el Nombre: hace que la persona se vuelva pura cuando comprende en profundidad el poder de la aceptación.",
+                essence: "Ayuda a alguien de tu familia hoy sin esperar nada a cambio.",
+                benefits: "Te trae la salvación y libera a tu linaje.",
+                contemplation: "La aceptación es la llave de la décima puerta (liberación).",
+                triad: { vibration: "Mokh", action: "Liberar", state: "Salvación" },
+                closure: "La aceptación transforma al mendigo en soberano."
+            },
+            {
+                id: "pauri-16",
+                title: "Pauri 16",
+                gurmukhi: "ਪੰਚ ਪਰਵਾਣ ਪੰਚ ਪਰਧਾਨੁ ॥ ਪੰਚੇ ਪਾਵਹਿ ਦਰਗਹਿ ਮਾਨੁ ॥ ਪੰਚੇ ਸੋਹਹਿ ਦਰਿ ਰਾਜਾਨੁ ॥ ਪੰਚਾ ਕਾ ਗੁਰੁ ਏਕੁ ਧਿਆਨੁ ॥ ਜੇ ਕੋ ਕਹੈ ਕਰੈ ਵੀਚਾਰੁ ॥ ਕਰਤੇ ਕੈ ਕਰਣੈ ਨਾਹੀ ਸੁਮਾਰੁ ॥ ਧੌਲੁ ਧਰਮੁ ਦਇਆ ਕਾ ਪੂਤੁ ॥ ਸੰਤੋਖੁ ਥਾਪਿ ਰਖਿਆ ਜਿਨਿ ਸੂਤਿ ॥ ਜੇ ਕੋ ਬੂਝੈ ਹੋਵੈ ਸਚਿਆਰੁ ॥ ਧਵਲੈ ਉਪਰਿ ਕੇਤਾ ਭਾਰੁ ॥ ਧਰਤੀ ਹੋਰੁ ਪਰੈ ਹੋਰੁ ਹੋਰੁ ॥ ਤਿਸ ਤੇ ਭਾਰੁ ਤਲੈ ਕਵਣੁ ਜੋਰੁ ॥ ਜੀਅ ਜਾਤਿ ਰੰਗਾ ਕੇ ਨਾਵ ॥ ਸਭਨਾ ਲਿਖਿਆ ਵੁੜੀ ਕਲਾਮ ॥ ਏਹੁ ਲੇਖਾ ਲਿਖਿ ਜਾਣੈ ਕੋਇ ॥ ਲੇਖਾ ਲਿਖਿਆ ਕੇਤਾ ਹੋਇ ॥ ਕੇਤਾ ਤਾਣੁ ਸੁਆਲਿਹੁ ਰੂਪੁ ॥ ਕੇਤੀ ਦਾਤਿ ਜਾਣੈ ਕੌਣੁ ਕੂਤੁ ॥ ਕੀਤਾ ਪਸਾਉ ਏਕੋ ਕਵਾਉ ॥ ਤਿਸ ਤੇ ਹੋਏ ਲਖ ਦਰੀਆਉ ॥ ਕੁਦਰਤਿ ਕਵਣ ਕਹਾ ਵੀਚਾਰੁ ॥ ਵਾਰਿਆ ਨ ਜਾਵਾ ਏਕ ਵਾਰ ॥ ਜੋ ਤੁਧੁ ਭਾਵੈ ਸਾਈ ਭਲੀ ਕਾਰ ॥ ਤੂ ਸਦਾ ਸਲਾਮਤਿ ਨਿਰੰਕਾਰ ॥੧੬॥",
+                transcription: "panch parvan panch pardhan. panche pave dargeh man. panche soheh dar rajan. pancha ka guru ek dhian. je ko kaha karai vichar. karte kai karne nahee sumar. dhaul dharam daia ka put. santokh thap rakhia jin sut. je ko bujhai hovai sachiar. dhavai upar keta bhar. dharti hor parai hor hor. tis te bhar talai kavan jor. jia jat ranga ke nav. sabhna likhia vurri kalam. eh lekha likh jane koe. lekha likhia keta hoe. keta tan sualihu rup. keti dat jane kaun kut. kita pasao eko kavao. tis te hoe lakh dariao. kudrat kavan kaha vichar. varia na java ek var. jo tudh bhavai saee bhali kar. tu sada salamat nirankar.",
+                translation: "Los elegidos son de crédito, los elegidos son supremos. Los elegidos encuentran honores mundanos. Los elegidos tienen bella presencia en la corte del rey. Los elegidos viven focalizados en el Guru. Nadie, desde su meditación profunda, podría comprender las acciones del Creador. El dharma, hijo de la compasión, es el toro que sostiene la tierra. Da lugar a la paciencia y sostiene el hilo conductor. Quien entiende esto se convierte en una persona verdadera. ¡Qué grande es el peso que soporta el toro! Muchos son los mundos paralelos, ¿qué poder los sostiene? Tantas son las almas de todo tipo y color, y todas ellas escritas por una pluma infatigable. Si alguien supiera describir todo esto, ¿cuántos escritos produciría? ¡Qué poder, qué bellas formas! ¿Quién conoce la extensión de todos estos regalos? Un solo gesto, una palabra, y surgieron 10000 ríos. Cuando medito en el poder de la naturaleza, ¿qué puedo decir? ¿Qué puedo hacer? Lo que place a Dios son las buenas acciones. Él siempre está en paz y sin forma.",
+                essence: "Reflexiona hoy sobre la estructura del universo y tu lugar en él.",
+                benefits: "Te dará el conocimiento de la estructura del universo.",
+                contemplation: "Los Cinco Elegidos representan las virtudes que sostienen la creación.",
+                triad: { vibration: "Nirankar", action: "Contemplar", state: "Paz" },
+                closure: "El Dharma sostiene todo, como el toro sostiene la tierra."
+            },
+            {
+                id: "pauri-17",
+                title: "Pauri 17",
+                gurmukhi: "ਅਸੰਖ ਜਪ ਅਸੰਖ ਭਾਉ ॥ ਅਸੰਖ ਪੂਜਾ ਅਸੰਖ ਤਪ ਤਾਉ ॥ ਅਸੰਖ ਗ੍ਰੰਥ ਮੁਖਿ ਵੇਦ ਪਾਠ ॥ ਅਸੰਖ ਜੋਗ ਮਨਿ ਰਹਹਿ ਉਦਾਸ ॥ ਅਸੰਖ ਭਗਤ ਗੁਣ ਗਿਆਨ ਵੀਚਾਰ ॥ ਅਸੰਖ ਸਤੀ ਅਸੰਖ ਦਾਤਾਰ ॥ ਅਸੰਖ ਸੂਰ ਮੁਹ ਭਖ ਸਾਰ ॥ ਅਸੰਖ ਮੋਨਿ ਲਿਵ ਲਾਇ ਤਾਰ ॥ ਕੁਦਰਤਿ ਕਵਣ ਕਹਾ ਵੀਚਾਰੁ ॥ ਵਾਰਿਆ ਨ ਜਾਵਾ ਏਕ ਵਾਰ ॥ ਜੋ ਤੁਧੁ ਭਾਵੈ ਸਾਈ ਭਲੀ ਕਾਰ ॥ ਤੂ ਸਦਾ ਸਲਾਮਤਿ ਨਿਰੰਕਾਰ ॥੧੭॥",
+                transcription: "asankh jap asankh bhao. asankh puja asankh tap tao. asankh granth mukh ved path. asankh jog man raheh udas. asankh bhagat gun gian vichar. asankh sati asankh datar. asankh sur muh bhakh sar. asankh mon liv lae tar. kudrat kavan kaha vichar. varia na java ek var. jo tudh bhavai saee bhali kar. tu sada salamat nirankar.",
+                translation: "Innumerables cantos, innumerables modos de amar. Innumerables rituales, innumerable energía. Innumerables libros, innumerables modos de recitar las escrituras sagradas. Innumerables los yoguis que viven desapegados de sus mentes. Innumerables los devotos, las virtudes, el conocimiento y los modos de meditación profunda. Innumerables las personas verdaderas y los generosos. Innumerables los héroes que se enfrentan al acero. Innumerables los santos que añoran reunirse con Él. Cuando medito en el poder de la naturaleza, ¿qué puedo decir? ¿Qué puedo hacer? Lo que place a Dios son las buenas acciones. Él siempre está en paz y sin forma.",
+                essence: "Cuenta tus bendiciones hoy, por pequeñas que parezcan.",
+                benefits: "Te traerá libertad y resurrección espiritual.",
+                contemplation: "Lo innumerable nos recuerda la infinitud del Creador.",
+                triad: { vibration: "Asankh", action: "Contar", state: "Libertad" },
+                closure: "Las prácticas son innumerables, pero la esencia es una."
+            },
+            {
+                id: "pauri-18",
+                title: "Pauri 18",
+                gurmukhi: "ਅਸੰਖ ਮੂਰਖ ਅੰਧ ਘੋਰ ॥ ਅਸੰਖ ਚੋਰ ਹਰਾਮਖੋਰ ॥ ਅਸੰਖ ਅਮਰ ਕਰਿ ਜਾਹਿ ਜੋਰ ॥ ਅਸੰਖ ਗਲਵਢ ਹਤਿਆ ਕਮਾਹਿ ॥ ਅਸੰਖ ਪਾਪੀ ਪਾਪੁ ਕਰਿ ਜਾਹਿ ॥ ਅਸੰਖ ਕੂੜਿਆਰ ਕੂੜੇ ਫਿਰਾਹਿ ॥ ਅਸੰਖ ਮਲੇਛ ਮਲੁ ਭਖਿ ਖਾਹਿ ॥ ਅਸੰਖ ਨਿੰਦਕ ਸਿਰਿ ਕਰਹਿ ਭਾਰੁ ॥ ਨਾਨਕ ਨੀਚੁ ਕਹੈ ਵੀਚਾਰੁ ॥ ਵਾਰਿਆ ਨ ਜਾਵਾ ਏਕ ਵਾਰ ॥ ਜੋ ਤੁਧੁ ਭਾਵੈ ਸਾਈ ਭਲੀ ਕਾਰ ॥ ਤੂ ਸਦਾ ਸਲਾਮਤਿ ਨਿਰੰਕਾਰ ॥੧੮॥",
+                transcription: "asankh murakh andh ghor. asankh chor haramkhor. asankh amar kar jaeh jor. asankh galvadh hatia kamah. asankh papi pap kar jaeh. asankh kuriaar kure firah. asankh malech mal bhakh khah. asankh nindak sir karah bhar. nanak nich kahai vichar. varia na java ek var. jo tudh bhavai saee bhali kar. tu sada salamat nirankar.",
+                translation: "Innumerables los estúpidos y los carentes de visión. Innumerables los ladrones y los que delinquen. Innumerables los poderosos que se creen inmortales. Innumerables los asesinos. Innumerables los que pecan y huyen. Innumerables los mentirosos que caen en las redes de sus mentiras. Innumerables los pícaros que se comen la porquería. Innumerables los difamadores que arrastran sus calumnias dentro de su propia mente. Nanak, el más bajo y humilde de todos ellos, habla desde su meditación profunda. ¿Qué puedo hacer? Lo que place a Dios son las buenas acciones. Él siempre está en paz y sin forma.",
+                essence: "Observa tus propias sombras hoy sin juzgarlas, solo reconócelas.",
+                benefits: "Combate la demencia, el sentimiento de inferioridad y comportamientos autodestructivos.",
+                contemplation: "La oscuridad también es innumerable, pero no define quién eres.",
+                triad: { vibration: "Nich", action: "Observar", state: "Humildad" },
+                closure: "En la humildad se encuentra la verdadera visión."
+            },
+            {
+                id: "pauri-19",
+                title: "Pauri 19",
+                gurmukhi: "ਅਸੰਖ ਨਾਵ ਅਸੰਖ ਥਾਵ ॥ ਅਗੰਮ ਅਗੰਮ ਅਸੰਖ ਲੋਆ ॥ ਅਸੰਖ ਕਹਹਿ ਸਿਰਿ ਭਾਰੁ ਹੋਇ ॥ ਅਖਰੀ ਨਾਮੁ ਅਖਰੀ ਸਾਲਾਹ ॥ ਅਖਰੀ ਗਿਆਨੁ ਗੀਤ ਗੁਣ ਗਾਹ ॥ ਅਖਰੀ ਲਿਖਣੁ ਬੋਲਣੁ ਬਾਣਿ ॥ ਅਖਰਾ ਸਿਰਿ ਸੰਜੋਗੁ ਵਖਾਣਿ ॥ ਜਿਨਿ ਏਹਿ ਲਿਖੇ ਤਿਸੁ ਸਿਰਿ ਨਾਹਿ ॥ ਜਿਵ ਫੁਰਮਾਏ ਤਿਵ ਤਿਵ ਪਾਹਿ ॥ ਜੇਤਾ ਕੀਤਾ ਤੇਤਾ ਨਾਉ ॥ ਵਿਣੁ ਨਾਵੈ ਨਾਹੀ ਕੋ ਥਾਉ ॥ ਕੁਦਰਤਿ ਕਵਣ ਕਹਾ ਵੀਚਾਰੁ ॥ ਵਾਰਿਆ ਨ ਜਾਵਾ ਏਕ ਵਾਰ ॥ ਜੋ ਤੁਧੁ ਭਾਵੈ ਸਾਈ ਭਲੀ ਕਾਰ ॥ ਤੂ ਸਦਾ ਸਲਾਮਤਿ ਨਿਰੰਕਾਰ ॥੧੯॥",
+                transcription: "asankh nav asankh thav. agam agam asankh loa. asankh kahah sir bhar hoe. akkhari nam akkhari salah. akkhari gian git gun gah. akkhari likhan bolan ban. akkhara sir sanjog vakhan. jin eh likhe tis sir nah. jiv furmae tiv tiv pah. jeta kita teta nao. vin navai nahee ko thao. kudrat kavan kaha vichar. varia na java ek var. jo tudh bhavai saee bhali kar. tu sada salamat nirankar.",
+                translation: "Innumerables los nombres y lugares. Innumerables las dimensiones paralelas imposibles de acceder. La propia palabra \'innumerables\' es una pesada carga para la mente. En el flujo del sonido están los nombres y las oraciones. En el flujo del sonido están el conocimiento y las canciones virtuosas. En el flujo del sonido está la palabra, hablada o escrita. En el flujo del sonido está tu bendito destino escrito en tu frente. Pero el Uno que escribió en tu frente, nada escrito tiene en la Suya. Tal como Él dicta, de ese modo las personas se mueven. Así como de inmensa es la creación, así de inmenso es el sonido. Más allá del sonido, nada existe. Cuando medito en el poder de la naturaleza, ¿qué puedo decir? Lo que place a Dios son las buenas acciones. Él siempre está en paz y sin forma.",
+                essence: "Escucha el sonido de tu propia voz hoy y siente su poder creativo.",
+                benefits: "Te dará conocimiento universal, inspiración y revelación.",
+                contemplation: "El Naam (Sonido) es tan inmenso como la creación misma.",
+                triad: { vibration: "Naam", action: "Vibrar", state: "Revelación" },
+                closure: "El Sonido es la base de toda existencia."
+            },
+            {
+                id: "pauri-20",
+                title: "Pauri 20",
+                gurmukhi: "ਭਰੀਐ ਹਥੁ ਪੈਰੁ ਤਨੁ ਦੇਹ ॥ ਪਾਣੀ ਧੋਤੈ ਉਤਰਸੁ ਖੇਹ ॥ ਮੂਤ ਪਲੀਤੀ ਕਪੜੁ ਹੋਇ ॥ ਦੇ ਸਾਬੂਣੁ ਲਈਐ ਓਹੁ ਧੋਇ ॥ ਭਰੀਐ ਮਤਿ ਪਾਪਾ ਕੈ ਸੰਗਿ ॥ ਓਹੁ ਧੋਪੈ ਨਾਵੈ ਕੈ ਰੰਗਿ ॥ ਪੁੰਨੀ ਪਾਪੀ ਆਖਣੁ ਨਾਹਿ ॥ ਕਰਿ ਕਰਿ ਕਰਣਾ ਲਿਖਿ ਲੈ ਜਾਹੁ ॥ ਆਪੇ ਬੀਜ ਆਪੇ ਹੀ ਖਾਹੁ ॥ ਨਾਨਕ ਹੁਕਮੀ ਆਵਹੁ ਜਾਹੁ ॥੨੦॥",
+                transcription: "bharia hath pair tan deh. pani dhotai utras kheh. mut paliti kapar hoe. de sabun laiai oh dhoi. bharia mat papa kai sang. oh dhopai navai kai rang. punni papi akhkan nah. kar kar karna likh lai jah. ape bij ape hi khah. nanak hukmi avah jah.",
+                translation: "Cuando las manos, los pies y el cuerpo están sucios, se limpian con agua y el polvo se va. Cuando las ropas se ensucian de orín, el jabón lava las manchas. Cuando la mente se llena de pecados, ésta se lava con el amor al Nombre. Los santos y los pecadores no lo son por lo que dicen, sino por lo que hacen, lo quieras o no. Así siembras, así recogerás. Nanak dice: es por su voluntad que venimos y nos vamos.",
+                essence: "Limpia una mala acción hoy con una buena acción anónima.",
+                benefits: "Este pauri borra los pecados y purifica el karma.",
+                contemplation: "El Nombre es el jabón que limpia las manchas de la mente.",
+                triad: { vibration: "Navai", action: "Limpiar", state: "Pureza" },
+                closure: "Sembramos lo que somos, cosechamos lo que hacemos."
+            },
+            {
+                id: "pauri-21",
+                title: "Pauri 21",
+                gurmukhi: "ਤੀਰਥੁ ਤਪੁ ਦਇਆ ਦਤੁ ਦਾਨੁ ॥ ਜੇ ਕੋ ਪਾਵੈ ਤਿਲ ਕਾ ਮਾਨੁ ॥ ਸੁਣਿਆ ਮੰਨਿਆ ਮਨਿ ਕੀਤਾ ਭਾਉ ॥ ਅੰਤਰਗਤਿ ਤੀਰਥਿ ਮਲਿ ਨਾਉ ॥ ਸਭਿ ਗੁਣ ਤੇਰੇ ਮੈ ਨਾਹੀ ਕੋਇ ॥ ਵਿਣੁ ਗੁਣ ਕੀਤੇ ਭਗਤਿ ਨ ਹੋਇ ॥ ਸੁਅਸਤਿ ਅਥਿ ਬਾਣੀ ਬਰਮਾਉ ॥ ਸਤਿ ਸੁਹਾਣੁ ਸਦਾ ਮਨਿ ਚਾਉ ॥ ਕਵਣੁ ਸੁ ਵੇਲਾ ਵਖਤੁ ਕਵਣੁ ਕਵਣ ਥਿਤਿ ਕਵਣੁ ਵਾਰੁ ॥ ਕਵਣਿ ਸਿ ਰੁਤੀ ਮਾਹੁ ਕਵਣੁ ਜਿਤੁ ਹੋਆ ਆਕਾਰੁ ॥ ਵੇਲ ਨ ਪਾਈਆ ਪੰਡਤੀ ਜਿ ਹੋਵੈ ਲੇਖੁ ਪੁਰਾਣੁ ॥ ਵਖਤੁ ਨ ਪਾਇਓ ਕਾਦੀਆ ਜਿ ਲਿਖਨਿ ਲੇਖੁ ਕੁਰਾਣੁ ॥ ਥਿਤਿ ਵਾਰੁ ਨਾ ਜੋਗੀ ਜਾਣੈ ਰੁਤਿ ਮਾਹੁ ਨਾ ਕੋਇ ॥ ਜਾ ਕਰਤਾ ਸਿਰਠੀ ਕਉ ਸਾਜੇ ਆਪੇ ਜਾਣੈ ਸੋਇ ॥ ਕਿਵ ਕਰਿ ਆਖਾ ਕਿਵ ਸਾਲਾਹੀ ਕਿਉ ਵਰਨੀ ਕਿਵ ਜਾਣਾ ॥ ਨਾਨਕ ਆਖਣਿ ਸਭੁ ਕੋ ਆਖੈ ਇਕੁ ਦੂ ਇਕੁ ਸਿਆਣਾ ॥ ਵਡਾ ਸਾਹਿਬੁ ਵਡੀ ਨਾਈ ਕੀਤਾ ਜਾ ਕਾ ਹੋਵੈ ॥ ਨਾਨਕ ਜੇ ਕੋ ਆਪੋ ਜਾਣੈ ਅਗੈ ਗਇਆ ਨ ਸੋਹੈ ॥੨੧॥",
+                transcription: "tirat tap daia dat dan. je ko pavai til ka man. sunia mania man kita bhao. antargat tirat mal nao. sabh gun tere mai nahee koe. vin gun kite bhagat na hoe. suast ath bani barmau. sat suhan sada man chao. kavan su vela vakh kavan kavan thit kavan var. kavan si ruti mah kavan jit hoe akar. vel na paia panditi je hovai lekh puran. vakh na paio kadia je likhan lekh kuran. thit var na jogi jane rut mah na koe. ja karta sirathi kau saje ape jane soe. kiv kar akha kiv salah ki varni kiv jana. nanak akhan sabh ko akhai ik do ik siana. vada sahib vadi nai kita ja ka hovai. nanak je ko apo jane agai gaea na sohai.",
+                translation: "Bañarse en lugares sagrados, ser austero, tener misericordia o hacer donaciones solo otorga un mínimo de honorabilidad. Pero quien escucha, asume y ama la Realidad queda lavado de toda suciedad interna. Las virtudes son de Dios, yo no soy dueño de ninguna. Sin virtudes no hay verdadera devoción. Saludo a Brahma, la palabra primordial, el de mente bella, honesta y feliz. ¿A qué hora, en qué tiempo, cuál fue el día o la noche, el mes o la estación en el que el universo fue creado? Los sabios lo desconocen, pues en caso contrario lo hubieran escrito en los Puranas. Tampoco los jueces y maestros lo saben, pues aparecería en el Corán. Ni los yoguis saben cuál fue ese día, noche, mes o estación, ¡nadie lo conoce! Solo el Creador de la Creación, solo Él lo sabe. ¿Cómo hablar, cómo rezar, cómo imaginar, cómo saber? Oh Nanak, todos hablan y hablan, cada uno más listo que el anterior. Grande es el señor, grande su justicia. Oh Nanak, quien cree que hace las cosas por sí mismo no será recordado una vez muerto.",
+                essence: "Meditar en el momento exacto de la creación trasciende todo conocimiento.",
+                benefits: "Mantendrá tu gracia y tu estatus espiritual.",
+                contemplation: "El momento de la creación es un misterio que solo el Creador conoce.",
+                triad: { vibration: "Akal", action: "Meditar", state: "Trascendencia" },
+                closure: "El verdadero conocimiento reconoce su propia limitación."
+            },
+            {
+                id: "pauri-22",
+                title: "Pauri 22",
+                gurmukhi: "ਪਾਤਾਲਾ ਪਾਤਾਲ ਲਖ ਆਗਾਸਾ ਆਗਾਸ ॥ ਓੜਕ ਓੜਕ ਭਾਲਿ ਥਕੇ ਵੇਦ ਕਹਨਿ ਇਕ ਵਾਤ ॥ ਸਹਸ ਅਠਾਰਹ ਕਹਨਿ ਕਤੇਬਾ ਅਸੁਲੂ ਇਕੁ ਧਾਤੁ ॥ ਲੇਖਾ ਹੋਇ ਤ ਲਿਖੀਐ ਲੇਖੈ ਹੋਇ ਵਿਣਾਸੁ ॥ ਨਾਨਕ ਵਡਾ ਆਖੀਐ ਆਪੇ ਜਾਣੈ ਆਪੁ ॥੨੨॥",
+                transcription: "patala patal lakh agasa agas. orak orak bhal thake ved kahan ik vat. sahas athareh kahan kateba asulu ik dhat. lekha hoe ta likhiai lekhai hoe vinas. nanak vada akhiai ape jane ap.",
+                translation: "Existen cientos de miles de submundos y de éteres sobre el éter. Investigándolos, las personas se cansan, pero los Vedas dicen que solo existe el Uno Verdadero. El Torah, la Biblia y el Corán hablan de 18000 mundos, pero al principio hubo un solo elemento. Si estos mundos pudieran ser descritos y alguien lo intentara, moriría escribiendo. Oh Nanak, se dice que Dios es grande, pero solo Él se conoce a Sí Mismo.",
+                essence: "Busca la unidad subyacente en todas las tradiciones espirituales.",
+                benefits: "Te hará buen estratega y dará la victoria en asuntos legales.",
+                contemplation: "Todas las escrituras apuntan al mismo Uno Verdadero.",
+                triad: { vibration: "Ek Dhat", action: "Buscar", state: "Unidad" },
+                closure: "El conocimiento de los mundos es infinito, pero la Esencia es Una."
+            },
+            {
+                id: "pauri-23",
+                title: "Pauri 23",
+                gurmukhi: "ਸਾਲਾਹੀ ਸਾਲਾਹਿ ਏਤੀ ਸੁਰਤਿ ਨ ਪਾਈਆ ॥ ਨਦੀਆ ਅਤੈ ਵਾਹ ਪਵਹਿ ਸਮੁੰਦਿ ਨ ਜਾਣੀਅਹਿ ॥ ਸਮੁੰਦ ਸਾਹ ਸੁਲਤਾਨ ਗਿਰਹਾ ਸੇਤੀ ਮਾਲੁ ਧਨੁ ॥ ਕੀਡੀ ਤੁਲਿ ਨ ਹੋਵਨੀ ਜੇ ਤਿਸੁ ਮਨਹੁ ਨ ਵੀਸਰਹਿ ॥੨੩॥",
+                transcription: "salahi salahi eti surat na paia. nadia atai vah pavah samund na janeah. samund sah sultan girha seti mal dhan. kidi tul na hovani je tis manah na visarahi.",
+                translation: "Recitar oraciones no otorga el poder de la escucha. Los arroyos y los ríos desembocan en el océano y ahí pierden su identidad. El sultán de los reyes del océano, con sus montañas de abundancia y tesoros, vale menos que una hormiga que no haya olvidado al Creador en su mente.",
+                essence: "Prefiere ser una hormiga que recuerda a Dios que un rey que lo olvida.",
+                benefits: "Eleva al ser y disipa la oscuridad espiritual.",
+                contemplation: "La riqueza mundana es insignificante comparada con el recuerdo divino.",
+                triad: { vibration: "Visar", action: "Recordar", state: "Presencia" },
+                closure: "El que no olvida a Dios es más rico que todos los reyes."
+            },
+            {
+                id: "pauri-24",
+                title: "Pauri 24",
+                gurmukhi: "ਅੰਤੁ ਨ ਸਿਫਤੀ ਕਹਣਿ ਨ ਅੰਤੁ ॥ ਅੰਤੁ ਨ ਕਰਣੈ ਦੇਣਿ ਨ ਅੰਤੁ ॥ ਅੰਤੁ ਨ ਵੇਖਣਿ ਸੁਣਣਿ ਨ ਅੰਤੁ ॥ ਅੰਤੁ ਨ ਜਾਪੈ ਕਿਆ ਮਨਿ ਮੰਤੁ ॥ ਅੰਤੁ ਨ ਜਾਪੈ ਕੀਤਾ ਆਕਾਰੁ ॥ ਅੰਤੁ ਨ ਜਾਪੈ ਪਾਰਾਵਾਰੁ ॥ ਅੰਤ ਕਾਰਣਿ ਕੇਤੇ ਬਿਲਲਾਹੇ ॥ ਤਾ ਕੇ ਅੰਤ ਨ ਪਾਏ ਜਾਹੇ ॥ ਏਹੁ ਅੰਤੁ ਨ ਜਾਣੈ ਕੋਇ ॥ ਬਹੁਤਾ ਕਹੀਐ ਬਹੁਤਾ ਹੋਇ ॥ ਵਡਾ ਸਾਹਿਬੁ ਊਚਾ ਥਾਉ ॥ ਊਚੇ ਉਪਰਿ ਊਚਾ ਨਾਉ ॥ ਏਵਡੁ ਊਚਾ ਹੋਵੈ ਕੋਇ ॥ ਤਿਸੁ ਊਚੇ ਕਉ ਜਾਣੈ ਸੋਇ ॥ ਜੇਵਡੁ ਆਪਿ ਜਾਣੈ ਆਪਿ ਆਪਿ ॥ ਨਾਨਕ ਨਦਰੀ ਕਰਮੀ ਦਾਤਿ ॥੨੪॥",
+                transcription: "ant na sifti kahan na ant. ant na karne den na ant. ant na vekhan sunan na ant. ant na japai kia man mant. ant na japai kita akar. ant na japai paravar. ant karan kete bilalah. ta ke ant na pae jahe. eh ant na jane koe. bahuta kahiai bahuta hoe. vada sahib ucha thao. uche upar ucha nao. evad ucha hovai koe. tis uche kau jane soe. jevad ap jane ap ap. nanak nadri karmi dat.",
+                translation: "No hay final para las oraciones o los consejos. No hay final para hacer o dar. No hay final para ver o escuchar. El fin no aparece, ¿qué mantra ocupa la mente del Creador? No hay final en el número de estructuras creadas. No hay final en las extensiones. ¡Cuánto sufrimiento por el final, pero no existe fin para el Uno! Nadie conoce el final, cuanto más avanzas, más te queda. Grande es el Señor, alto su lugar. Su Nombre es lo más alto de lo alto. Así de grande hubiera alguien de ser para conocerlo a Él. Solo Él conoce lo grande que es Él. Oh Nanak, un guiño suyo te libera de tus karmas.",
+                essence: "Abraza el misterio de lo ilimitado hoy sin buscar respuestas.",
+                benefits: "Rompe las limitaciones con la fuerza de un rayo. Elimina la desventura.",
+                contemplation: "El Infinito no tiene fin, y eso es su belleza.",
+                triad: { vibration: "Ant", action: "Abrazar", state: "Ilimitado" },
+                closure: "La mirada de gracia disuelve todas las limitaciones."
+            },
+            {
+                id: "pauri-25",
+                title: "Pauri 25",
+                gurmukhi: "ਬਹੁਤਾ ਕਰਮੁ ਲਿਖਿਆ ਨਾ ਜਾਇ ॥ ਵਡਾ ਦਾਤਾ ਤਿਲੁ ਨ ਤਮਾਇ ॥ ਕੇਤੇ ਮੰਗਹਿ ਜੋਧ ਅਪਾਰ ॥ ਕੇਤਿਆ ਗਣਤਿ ਨਹੀ ਵੀਚਾਰੁ ॥ ਕੇਤੇ ਖਪਿ ਟੁਟਹਿ ਵੇਕਾਰ ॥ ਕੇਤੇ ਲੈ ਲੈ ਮੁਕਰੁ ਪਾਹਿ ॥ ਕੇਤੇ ਮੂਰਖ ਖਾਹੀ ਖਾਹਿ ॥ ਕੇਤਿਆ ਦੁਖ ਭੁਖ ਸਦ ਮਾਰ ॥ ਏਹਿ ਭਿ ਦਾਤਿ ਤੇਰੀ ਦਾਤਾਰ ॥ ਬੰਦਿ ਖਲਾਸੀ ਭਾਣੈ ਹੋਇ ॥ ਹੋਰੁ ਆਖਿ ਨ ਸਕੈ ਕੋਇ ॥ ਜੇ ਕੋ ਖਾਇਕੁ ਆਖਣਿ ਪਾਇ ॥ ਓਹੁ ਜਾਣੈ ਜੇਤੀਆ ਮੁਹਿ ਖਾਇ ॥ ਆਪੇ ਜਾਣੈ ਆਪੇ ਦੇਇ ॥ ਆਖਹਿ ਸਿ ਭਿ ਕਈ ਕੇਇ ॥ ਜਿਸ ਨੋ ਬਖਸੇ ਸਿਫਤਿ ਸਾਲਾਹ ॥ ਨਾਨਕ ਪਾਤਿਸਾਹੀ ਪਾਤਿਸਾਹੁ ॥੨੫॥",
+                transcription: "bahuta karam likhia na jae. vada data til na tamae. kete mangah jodh apar. ketia ganat nahee vichar. kete khap tuteh vekar. kete lai lai mukar pah. kete murakh khahi khah. ketia duk bukh sad mar. eh bh dat teri datar. band khalasi bhanai hoe. hor akh na sakai koe. je ko khaik akhan pae. oh jane jetia muhi khae. ape jane ape de. akheh si bh kai kee. jis no bakhse sift salah. nanak patshahi patshah.",
+                translation: "Hay tanto karma que no se puede describir. El Gran Dador no tiene ni semilla de avaricia. Muchos guerreros suplican por el Infinito. Incontables son los meditadores. Abundan los desgraciados, las personas rotas, los que no respetan derechos. Otros muchos obtienen y obtienen, y se vuelven desagradecidos. Los hay necios, glotones comedores. Tanto es el dolor y el hambre, siempre presentes. También estos son regalos del Dador. La liberación de las ataduras es por Su voluntad. Nadie hay capaz de entender esto. Si algún tonto lo pretendiera, experimentaría su necedad. Dios da, Dios conoce, pero son pocas las personas que proclaman esto. Aquellos bendecidos con la prudencia y buenas cualidades, Oh Nanak, son reyes entre reyes.",
+                essence: "Agradece incluso las dificultades hoy, pues también son regalos.",
+                benefits: "Satisface tus necesidades. Te vendrá prosperidad, virtud, estatus y riqueza.",
+                contemplation: "El Dador da todo, incluso lo que no entendemos.",
+                triad: { vibration: "Dat", action: "Agradecer", state: "Satisfacción" },
+                closure: "Los verdaderos reyes son los que alaban al Dador."
+            },
+            {
+                id: "pauri-26",
+                title: "Pauri 26",
+                gurmukhi: "ਅਮੁਲੁ ਗੁਣੁ ਅਮੁਲੁ ਵਾਪਾਰੁ ॥ ਅਮੁਲੁ ਵਾਪਾਰੀਏ ਅਮੁਲੁ ਭੰਡਾਰੁ ॥ ਅਮੁਲੁ ਆਵਹਿ ਅਮੁਲੁ ਲੈ ਜਾਹਿ ॥ ਅਮੁਲੁ ਭਾਇ ਅਮੁਲਾ ਸਮਾਹਿ ॥ ਅਮੁਲੁ ਧਰਮੁ ਅਮੁਲੁ ਦੀਬਾਣੁ ॥ ਅਮੁਲੁ ਤੁਲੁ ਅਮੁਲੁ ਪਰਵਾਣੁ ॥ ਅਮੁਲੁ ਬਖਸੀਸ ਅਮੁਲੁ ਨੀਸਾਣੁ ॥ ਅਮੁਲੁ ਕਰਮੁ ਅਮੁਲੁ ਫੁਰਮਾਣੁ ॥ ਅਮੁਲੋ ਅਮੁਲੁ ਆਖਿਆ ਨ ਜਾਇ ॥ ਆਖਿ ਆਖਿ ਰਹੇ ਲਿਵ ਲਾਇ ॥ ਆਖਹਿ ਵੇਦ ਪਾਠ ਪੁਰਾਣ ॥ ਆਖਹਿ ਪੜੇ ਕਰਹਿ ਵਖਿਆਣ ॥ ਆਖਹਿ ਬਰਮੇ ਆਖਹਿ ਇੰਦ ॥ ਆਖਹਿ ਗੋਪੀ ਤੈ ਗੋਵਿੰਦ ॥ ਆਖਹਿ ਈਸਰ ਆਖਹਿ ਸਿਧ ॥ ਆਖਹਿ ਕੇਤੇ ਕੀਤੇ ਬੁਧ ॥ ਆਖਹਿ ਦਾਨਵ ਆਖਹਿ ਦੇਵ ॥ ਆਖਹਿ ਸੁਰਿ ਨਰ ਮੁਨਿ ਜਨ ਸੇਵ ॥ ਕੇਤੇ ਆਖਹਿ ਆਖਣਿ ਪਾਹਿ ॥ ਕੇਤੇ ਕਹਿ ਕਹਿ ਉਠਿ ਉਠਿ ਜਾਹਿ ॥ ਏਤੇ ਕੀਤੇ ਹੋਰਿ ਕਰੇਹਿ ॥ ਤਾ ਆਖਿ ਨ ਸਕਹਿ ਕਈ ਕੇਇ ॥ ਜੇਵਡੁ ਭਾਵੈ ਤੇਵਡੁ ਹੋਇ ॥ ਨਾਨਕ ਜਾਣੈ ਸਾਚਾ ਸੋਇ ॥ ਜੇ ਕੋ ਆਖੈ ਬੋਲੁਵਿਗਾੜੁ ॥ ਤਾ ਲਿਖੀਐ ਸਿਰਿ ਗਾਵਾਰਾ ਗਾਵਾਰੁ ॥੨੬॥",
+                transcription: "amul gun amul vapaar. amul vaparee amul bhandaar. amul avah amul lai jah. amul bhae amula samah. amul dharam amul deban. amul tul amul parvan. amul bakhsees amul neesan. amul karam amul furman. amulo amul akhia na jae. akh akh rahe liv lae. akheh ved path puran. akheh pare karah vakhian. akheh barme akheh ind. akheh gopi tai govind. akheh isar akheh sid. akheh kete kite budh. akheh danav akheh dev. akheh sur nar mun jan sev. kete akheh akhan pah. kete kah kah uth uth jah. ete kite hor kareh. ta akh na sakah kee kee. jevad bhavai tevad hoe. nanak jane sacha soe. je ko akhai boluvigar. ta likhiai sir gavara gavar.",
+                translation: "Inapreciables las virtudes y los negocios. Inapreciables los marchantes y los tesoros. Inapreciables vienen y van. Inapreciables los amantes, inapreciables aquellos en samadhi. Inapreciable el dharma, inapreciable el trono donde se sienta el rey. Inapreciables ponderaciones, inapreciables las personas de mérito. Inapreciable es el afecto, inapreciables sus manifestaciones. Inapreciables las acciones y las órdenes. Lo inapreciable no puede ser descrito. Hablando y hablando, muchos se estancan en la nostalgia. Los Vedas y los Puranas hablan, los estudiosos e intelectuales hablan. Los Brahmas, los Indras hablan, los gopis y los Krishnas hablan. Los Shivas y los magos hablan. ¡Cuántos son los que, convertidos en sabios, hablan! Los demonios y los dioses, los ángeles, los jainistas y los sirvientes hablan. Cuántos son los que hablan y hablan, y hablando mueren. ¡Tantos discursos creados! Pero por más que se multiplicaran, no podrían describirlo a Él ni un mínimo. Tan grande como le place, así de grande Él se vuelve. Oh Nanak, ese Uno Verdadero sí sabe. Quien escriba discursos discordantes sobre su frente estará escrito \'tonto entre los tontos\'.",
+                essence: "Reconoce hoy que lo verdaderamente valioso no tiene precio.",
+                benefits: "Desvanece las pérdidas, la miseria y la desventura en los negocios.",
+                contemplation: "Lo inapreciable trasciende todas las descripciones humanas.",
+                triad: { vibration: "Amul", action: "Valorar", state: "Inapreciable" },
+                closure: "El valor verdadero no puede ser medido ni descrito."
+            },
+            {
+                id: "pauri-27",
+                title: "Pauri 27",
+                gurmukhi: "ਸੋ ਦਰੁ ਕੇਹਾ ਸੋ ਘਰੁ ਕੇਹਾ ਜਿਤੁ ਬਹਿ ਸਰਬ ਸਮਾਲੇ ॥ ਵਾਜੇ ਨਾਦ ਅਨੇਕ ਅਸੰਖਾ ਕੇਤੇ ਵਾਵਣਹਾਰੇ ॥ ਕੇਤੇ ਰਾਗ ਪਰੀ ਸਿਉ ਕਹੀਅਨਿ ਕੇਤੇ ਗਾਵਣਹਾਰੇ ॥ ਗਾਵਹਿ ਤੁਹਨੋ ਪਉਣੁ ਪਾਣੀ ਬੈਸੰਤਰੁ ਗਾਵੈ ਰਾਜਾ ਧਰਮੁ ਦੁਆਰੇ ॥ ਗਾਵਹਿ ਚਿਤੁ ਗੁਪਤੁ ਲਿਖਿ ਜਾਣਹਿ ਲਿਖਿ ਲਿਖਿ ਧਰਮੁ ਵੀਚਾਰੇ ॥ ਗਾਵਹਿ ਈਸਰੁ ਬਰਮਾ ਦੇਵੀ ਸੋਹਨਿ ਸਦਾ ਸਵਾਰੇ ॥ ਗਾਵਹਿ ਇੰਦੁ ਇਦਾਸਣਿ ਬੈਠੇ ਦੇਵਤਿਆ ਦਰਿ ਨਾਲੇ ॥ ਗਾਵਹਿ ਸਿਧ ਸਮਾਧੀ ਅੰਦਰਿ ਗਾਵਨਿ ਸਾਧ ਵੀਚਾਰੇ ॥ ਗਾਵਨਿ ਜਤੀ ਸਤੀ ਸੰਤੋਖੀ ਗਾਵਹਿ ਵੀਰ ਕਰਾਰੇ ॥ ਗਾਵਨਿ ਪੰਡਿਤ ਪੜਨਿ ਰਖੀਸਰ ਜੁਗੁ ਜੁਗੁ ਵੇਦਾ ਨਾਲੇ ॥ ਗਾਵਹਿ ਮੋਹਣੀਆ ਮਨੁ ਮੋਹਨਿ ਸੁਰਗਾ ਮਛਿ ਪਿਆਲੇ ॥ ਗਾਵਹਿ ਰਤਨ ਉਪਾਏ ਤੇਰੇ ਅਠਸਠਿ ਤੀਰਥ ਨਾਲੇ ॥ ਗਾਵਹਿ ਜੋਧ ਮਹਾਬਲ ਸੂਰਾ ਗਾਵਹਿ ਖਾਣੀ ਚਾਰੇ ॥ ਗਾਵਹਿ ਖੰਡ ਮੰਡਲ ਵਰਭੰਡਾ ਕਰਿ ਕਰਿ ਰਖੇ ਧਾਰੇ ॥ ਸੇਈ ਤੁਧੁਨੋ ਗਾਵਹਿ ਜੋ ਤੁਧੁ ਭਾਵਨਿ ਰਤੇ ਤੇਰੇ ਭਗਤ ਰਸਾਲੇ ॥ ਹੋਰਿ ਕੇਤੇ ਗਾਵਨਿ ਸੇ ਮੈ ਚਿਤਿ ਨ ਆਵਨਿ ਨਾਨਕ ਕਿਆ ਵੀਚਾਰੇ ॥ ਸੋਈ ਸੋਈ ਸਦਾ ਸਚੁ ਸਾਹਿਬੁ ਸਾਚਾ ਸਾਚੀ ਨਾਈ ॥ ਹੈ ਭੀ ਹੋਸੀ ਜਾਇ ਨ ਜਾਸੀ ਰਚਨਾ ਜਿਨਿ ਰਚਾਈ ॥ ਰੰਗੀ ਰੰਗੀ ਭਾਤੀ ਕਰਿ ਕਰਿ ਜਿਨਸੀ ਮਾਇਆ ਜਿਨਿ ਉਪਾਈ ॥ ਕਰਿ ਕਰਿ ਵੇਖੈ ਕੀਤਾ ਆਪਣਾ ਜਿਵ ਤਿਸ ਦੀ ਵਡਿਆਈ ॥ ਜੋ ਤਿਸੁ ਭਾਵੈ ਸੋਈ ਕਰਸੀ ਹੁਕਮੁ ਨ ਕਰਣਾ ਜਾਈ ॥ ਸੋ ਪਾਤਿਸਾਹੁ ਸਾਹਾ ਪਾਤਿਸਾਹਿਬੁ ਨਾਨਕ ਰਹਣੁ ਰਜਾਈ ॥੨੭॥",
+                transcription: "so dar keha so ghar keha jit beh sarab samale. vaje nad anek asankha kete vavanhare. kete rag pari sio kahian kete gavanhare. gavah tuhano paun pani baisantar gavai raja dharam duare. gavah chit gupt likh janeh likh likh dharam vichare. gavah isar barma devi sohan sada savare. gavah ind idasan baith devatia dar nale. gavah sid samadhi andar gavan sadh vichare. gavan jati sati santokhi gavah vir karare. gavan pandit paran rakhisar jug jug veda nale. gavah mohaniya man mohan surgā māch piāle. gavah ratan upae tere athsath tirath nale. gavah jodh mahabal sura gavah khani chare. gavah khand mandal varbhanda kar kar rakhe dhare. see tudhuno gavah jo tudh bhavan rate tere bhagat rasale. hor kete gavan se mai chit na avan nanak kia vichare. soee soee sada sach sahib sacha sachi nai. hai bhi hose jae na jasi rachna jin rachai. rangi rangi bhati kar kar jinsi maya jin upai. kar kar vekhai kita apna jiv tis di vadiaee. jo tis bhavai soee karsi hukam na karna jai. so patshah saha patshahib nanak rahan rajai.",
+                translation: "¿Tras qué puerta, en qué casa, sobre qué asiento Él es recordado? ¡Innumerables sonidos emitidos por tantos músicos! ¡Cuántas ragas cantadas por bellas voces femeninas, cuántos cantantes! Ellos cantan para ti el viento, el agua y el fuego. El mismo rey del dharma canta en la puerta. Canta la mente capaz de escribir lo consciente e inconsciente. El dharma se refleja profundamente en lo escrito. Cantan Shiva, Brahma y Devi, tan bellos, siempre decorados. Canta Indra sentado en su trono, junto los semidioses en la entrada. Los psíquicos cantan desde las profundidades de su samadhi. Los disciplinados cantan desde la profundidad de su reflexión. Cantan los castos, los honestos, los llenos de paciencia. Los héroes, fuertes, cantan. Cantan los letrados estudiosos y los siete rishis. Cantan a lo largo de las eras de los Vedas. Cantan las mujeres de belleza hechicera, en los cielos, en la tierra, en los submundos. Cantan aquellos de conciencia como diamantes, en los 68 lugares sagrados. Cantan los soldados y los valerosos guerreros. Cantan las cuatro fuentes de la creación. Cantan los planetas, los sistemas solares y las galaxias, creados y suspendidos en su lugar. Le cantan a Él lo que a Él le plazca. Sus devotos están llenos de amor y gozo. ¡Tantos le cantan que ni los recuerdo! Oh Nanak, no lo puedo describir. Ese Uno, ese Uno siempre verdadero Señor, verdadera grandeza. Él es, ahora y para siempre; no tiene origen ni fin. Él es el creador de la creación. Creador de tantos y tantos colores de todo tipo y naturaleza. Él creó a Maya. Habiendo creado, contempla su creación, a semejanza de su grandeza. Él hace lo que le place, nada está por encima suyo. Ése es el Emperador, el Supremo Señor de todos los reyes. Oh Nanak, vive en su voluntad.",
+                essence: "Canta tu propia canción de gratitud hoy, aunque sea en silencio.",
+                benefits: "Elimina los obstáculos. Te abre el camino cuando no ves oportunidades.",
+                contemplation: "Toda la creación canta la gloria del Creador.",
+                triad: { vibration: "Rajai", action: "Cantar", state: "Emperador" },
+                closure: "Vivir en la voluntad divina es la verdadera realeza."
+            },
+            {
+                id: "pauri-28",
+                title: "Pauri 28",
+                gurmukhi: "ਮੁੰਦਾ ਸੰਤੋਖੁ ਸਰਮੁ ਪਤੁ ਝੋਲੀ ਧਿਆਨ ਕੀ ਕਰਹਿ ਬਿਭੂਤਿ ॥ ਖਿੰਥਾ ਕਾਲੁ ਕੁਆਰੀ ਕਾਇਆ ਜੁਗਤਿ ਡੰਡਾ ਪਰਤੀਤਿ ॥ ਆਈ ਪੰਥੀ ਸਗਲ ਜਮਾਤੀ ਮਨਿ ਜੀਤੈ ਜਗੁ ਜੀਤੁ ॥ ਆਦੇਸੁ ਤਿਸੈ ਆਦੇਸੁ ॥ ਆਦਿ ਅਨੀਲੁ ਅਨਾਦਿ ਅਨਾਹਤਿ ਜੁਗੁ ਜੁਗੁ ਏਕੋ ਵੇਸੁ ॥੨੮॥",
+                transcription: "munda santokh saram pat jholi dhian ki karah bibhut. khintha kal kuari kaia jugat danda parteet. ai panthi sagal jamati man jitai jag jit. ades tisai ades. ad anil anad anahat jug jug eko ves.",
+                translation: "Haz de la paciencia tus ganancias, que la modestia sea tu platillo y tu monedero. Haz de la meditación tus cenizas. Que la muerte sea tu abrigo remendado, ten un cuerpo casto. Que la práctica y la fe sean tu bastón de ciego. Haz de la humanidad tu secta. Conquista tu mente y conquistarás el mundo. Yo te saludo, Primordial, sin color, sin comienzo, indestructible. A lo largo de las eras, existe sólo una forma.",
+                essence: "Practica la paciencia como tu mayor riqueza hoy.",
+                benefits: "Es la combinación de palabras más potente que existe. Te une con Dios.",
+                contemplation: "Quien conquista su mente, conquista el mundo.",
+                triad: { vibration: "Anahat", action: "Practicar", state: "Conquista" },
+                closure: "El saludo al Uno primordial abre todas las puertas."
+            },
+            {
+                id: "pauri-29",
+                title: "Pauri 29",
+                gurmukhi: "ਭੁਗਤਿ ਗਿਆਨੁ ਦਇਆ ਭੰਡਾਰਣਿ ਘਟਿ ਘਟਿ ਵਾਜੇ ਨਾਦ ॥ ਆਪਿ ਨਾਥੁ ਨਾਥੀ ਸਭ ਜਾ ਕੀ ਰਿਧਿ ਸਿਧਿ ਅਵਰਾ ਸਾਦ ॥ ਸੰਜੋਗੁ ਵਿਜੋਗੁ ਦੁਇ ਕਾਰ ਚਲਾਵਹਿ ਲੇਖੇ ਆਵਹਿ ਭਾਗ ॥ ਆਦੇਸੁ ਤਿਸੈ ਆਦੇਸੁ ॥ ਆਦਿ ਅਨੀਲੁ ਅਨਾਦਿ ਅਨਾਹਤਿ ਜੁਗੁ ਜੁਗੁ ਏਕੋ ਵੇਸੁ ॥੨੯॥",
+                transcription: "bhugat gian daia bhandaaran ghatt ghatt vaje nad. ap nath nathi sabh ja ki ridh sidh avra sad. sanjog vijog due kar chalvah lekhe avah bhag. ades tisai ades. ad anil anad anahat jug jug eko ves.",
+                translation: "Deja que tu placer sea la sabiduría y que tu ayudante sea el cariño. En todos los corazones resuena la corriente de sonido. Solo Él es el Maestro, a quien todas las maestrías pertenecen. La riqueza, los poderes psíquicos, los placeres. Unión y separación, ambas acciones Él las produce. De lo escrito provienen buenos destinos. Yo te saludo, Primordial, sin color, sin comienzo, indestructible. A lo largo de las eras, existe sólo una forma.",
+                essence: "Encuentra la sabiduría en cada experiencia, buena o mala.",
+                benefits: "Escudo de protección. Desvanece a aquellos que te desean el mal.",
+                contemplation: "Unión y separación provienen de la misma fuente divina.",
+                triad: { vibration: "Bhandaar", action: "Disfrutar", state: "Protección" },
+                closure: "La sabiduría es el verdadero placer."
+            },
+            {
+                id: "pauri-30",
+                title: "Pauri 30",
+                gurmukhi: "ਏਕਾ ਮਾਈ ਜੁਗਤਿ ਵਿਆਈ ਤਿਨਿ ਚੇਲੇ ਪਰਵਾਣੁ ॥ ਇਕੁ ਸੰਸਾਰੀ ਇਕੁ ਭੰਡਾਰੀ ਇਕੁ ਲਾਏ ਦੀਬਾਣੁ ॥ ਜਿਵ ਤਿਸੁ ਭਾਵੈ ਤਿਵੈ ਚਲਾਵੈ ਜਿਵ ਹੋਵੈ ਫੁਰਮਾਣੁ ॥ ਓਹੁ ਵੇਖੈ ਓਨਾ ਨਦਰਿ ਨ ਆਵੈ ਬਹੁਤਾ ਏਹੁ ਵਿਡਾਣੁ ॥ ਆਦੇਸੁ ਤਿਸੈ ਆਦੇਸੁ ॥ ਆਦਿ ਅਨੀਲੁ ਅਨਾਦਿ ਅਨਾਹਤਿ ਜੁਗੁ ਜੁਗੁ ਏਕੋ ਵੇਸੁ ॥੩੦॥",
+                transcription: "eka mai jugat viai tin chele parvan. ik sansari ik bhandaari ik lae deban. jiv tis bhavai tivai chalavai jiv hovai furman. oh vekhai ona nadar na avai bahuta eh vidan. ades tisai ades. ad anil anad anahat jug jug eko ves.",
+                translation: "El Uno y la Madre van a casarse. Hay tres valiosos estudiantes. Uno es el mundano, otro es el organizador, y otro sostiene la corte. Como a Él le plazca, así hace que las cosas se muevan, siguiendo su orden. Él ve, mientras que otros no echan siquiera un vistazo. Grande es el milagro. Yo te saludo, Primordial, sin color, sin comienzo, indestructible. A lo largo de las eras, existe sólo una forma.",
+                essence: "Observa los tres aspectos de tu propia naturaleza hoy.",
+                benefits: "Te convierte en un sabio y en un santo. Te coloca en el trono de la divinidad.",
+                contemplation: "Los tres estudiantes representan los tres gunas o cualidades de la naturaleza.",
+                triad: { vibration: "Jugat", action: "Observar", state: "Santidad" },
+                closure: "El milagro de la existencia está en la variedad de la unidad."
+            },
+            {
+                id: "pauri-31",
+                title: "Pauri 31",
+                gurmukhi: "ਆਸਣੁ ਲੋਇ ਲੋਇ ਭੰਡਾਰ ॥ ਜੋ ਕਿਛੁ ਪਾਇਆ ਸੁ ਏਕਾ ਵਾਰ ॥ ਕਰਿ ਕਰਿ ਵੇਖੈ ਸਿਰਜਣਹਾਰੁ ॥ ਨਾਨਕ ਸਚੇ ਕੀ ਸਾਚੀ ਕਾਰ ॥ ਆਦੇਸੁ ਤਿਸੈ ਆਦੇਸੁ ॥ ਆਦਿ ਅਨੀਲੁ ਅਨਾਦਿ ਅਨਾਹਤਿ ਜੁਗੁ ਜੁਗੁ ਏਕੋ ਵੇਸੁ ॥੩੧॥",
+                transcription: "asan loe loe bhandaar. jo kich paea su eka var. kar kar vekhai sirjanhar. nanak sache ki sachi kar. ades tisai ades. ad anil anad anahat jug jug eko ves.",
+                translation: "Él está sentado en todas las esferas creadas, en todos los objetos ahí puestos. Todo lo creado lo hace una sola vez, y no se repone. El Creador hace y hace, y observa lo hecho. Oh Nanak, la obra del Uno Verdadero es verdadera. Yo te saludo, Primordial, sin color, sin comienzo, indestructible. A lo largo de las eras, existe sólo una forma.",
+                essence: "Observa la singularidad en cada creación que encuentres hoy.",
+                benefits: "Te traerá todas las virtudes del cielo.",
+                contemplation: "Todo lo creado es único e irrepetible.",
+                triad: { vibration: "Sirjanhar", action: "Crear", state: "Verdad" },
+                closure: "La creación verdadera es la que se hace con presencia."
+            },
+            {
+                id: "pauri-32",
+                title: "Pauri 32",
+                gurmukhi: "ਇਕੁ ਦੂ ਜੀਭਉ ਲਖ ਹੋਹਿ ਲਖ ਹੋਵਹਿ ਲਖ ਵੀਸ ॥ ਲਖੁ ਲਖੁ ਗੇੜਾ ਆਖੀਅਹਿ ਏਕੁ ਨਾਮੁ ਜਗਦੀਸ ॥ ਏਤੁ ਰਾਹਿ ਪਤਿ ਪਵੜੀਆ ਚੜ਼ੀਐ ਹੋਇ ਇਕੀਸ ॥ ਸੁਣਿ ਗਲ੍ਹ੍ਹਾ ਆਕਾਸ ਕੀ ਕੀਟਾ ਆਈ ਰੀਸ ॥ ਨਾਨਕ ਨਦਰੀ ਪਾਈਐ ਕੂੜੀ ਕੂੜੈ ਠੀਸ ॥੩੨॥",
+                transcription: "ik do jibhau lakh hoh lakh hovah lakh vis. lakh lakh gera akhiah ek nam jagdis. et rah pat pavaria charia hoe ikis. sun galha akas ki kita ai ris. nanak nadri paiai kuri kurais this.",
+                translation: "De una boca surgen 100.000, y de 100.000 surgen 20 veces 100.000. 100.000 veces 100.000 repeticiones pronunciando el nombre del Uno, el Señor del mundo. En el camino del Maestro hay escalones, subiéndolos te vuelves uno con Dios. Escuchando los asuntos etéreos, incluso los gusanos añorarán volver a Casa. Oh Nanak, es por Su gracia que lo obtenemos. Aquellos que digan que lo hicieron por ellos mismos son unos farsantes.",
+                essence: "Repite el Nombre hoy, aunque sea una sola vez con sinceridad.",
+                benefits: "Paga tus deudas y completa tu karma.",
+                contemplation: "El Nombre se multiplica infinitamente cuando se pronuncia con devoción.",
+                triad: { vibration: "Jagdis", action: "Repetir", state: "Unidad" },
+                closure: "La gracia divina es el único camino verdadero."
+            },
+            {
+                id: "pauri-33",
+                title: "Pauri 33",
+                gurmukhi: "ਆਖਣਿ ਜੋਰੁ ਚੁਪੈ ਨਹਿ ਜੋਰੁ ॥ ਜੋਰੁ ਨ ਮੰਗਣਿ ਦੇਣਿ ਨ ਜੋਰੁ ॥ ਜੋਰੁ ਨ ਜੀਵਣਿ ਮਰਣਿ ਨਹਿ ਜੋਰੁ ॥ ਜੋਰੁ ਨ ਰਾਜਿ ਮਾਲਿ ਮਨਿ ਸੋਰੁ ॥ ਜੋਰੁ ਨ ਸੁਰਤੀ ਗਿਆਨਿ ਵੀਚਾਰਿ ॥ ਜੋਰੁ ਨ ਜੁਗਤੀ ਛੁਟੈ ਸੰਸਾਰੁ ॥ ਜਿਸੁ ਹਥਿ ਜੋਰੁ ਕਰਿ ਵੇਖੈ ਸੋਇ ॥ ਨਾਨਕ ਉਤਮੁ ਨੀਚੁ ਨ ਕੋਇ ॥੩੩॥",
+                transcription: "akhan jor chupai nah jor. jor na mangan den na jor. jor na jivan maran nah jor. jor na raj mal man sor. jor na surti gian vichar. jor na jugti chutai sansar. jis hath jor kar vekhai soe. nanak utam nich na koe.",
+                translation: "Sin poder para hablar, sin poder para estar en silencio. Sin poder para suplicar, sin poder para dar. Sin poder para vivir o morir. El enriquecimiento no puede calmar el desorden de la mente. Sin poder para escuchar, conocer o meditar. Sin poder para decidir el modo en que uno abandona esta vida. Todo el poder se encuentra en las manos del Uno, quien, tras actuar, contempla. Oh Nanak, nadie es alto o bajo por sí mismo.",
+                essence: "Ríndete ante el poder divino hoy y libera tu necesidad de control.",
+                benefits: "Destruye el ego y la negatividad. Previene que hagas daño a otros.",
+                contemplation: "Todo poder humano es ilusorio; solo el poder divino es real.",
+                triad: { vibration: "Jor", action: "Rendirse", state: "Equidad" },
+                closure: "En los ojos de Dios, todos somos iguales."
+            },
+            {
+                id: "pauri-34",
+                title: "Pauri 34",
+                gurmukhi: "ਰਾਤੀ ਰੁਤੀ ਥਿਤੀ ਵਾਰੁ ॥ ਪਵਣੁ ਪਾਣੀ ਅਗਨੀ ਪਾਤਾਲੁ ॥ ਤਿਸੁ ਵਿਚਿ ਧਰਤੀ ਥਾਪਿ ਰਖੀ ਧਰਮ ਸਾਲੁ ॥ ਤਿਸੁ ਵਿਚਿ ਜੀਅ ਜੁਗਤਿ ਕੇ ਰੰਗ ॥ ਤਿਨ ਕੇ ਨਾਮ ਅਨੇਕ ਅਨੰਤ ॥ ਕਰਮੀ ਕਰਮੀ ਹੋਇ ਵੀਚਾਰੁ ॥ ਸਚਾ ਆਪਿ ਸਚਾ ਦਰਬਾਰੁ ॥ ਤਿਥੈ ਸੋਹਨਿ ਪੰਚ ਪਰਵਾਣੁ ॥ ਨਦਰੀ ਕਰਮਿ ਪਵੈ ਨੀਸਾਣੁ ॥ ਕਚ ਪਕਾਈ ਓਥੈ ਪਾਇ ॥ ਨਾਨਕ ਗਇਆ ਜਾਪੈ ਜਾਇ ॥੩੪॥",
+                transcription: "rati ruti thiti var. pavan pani agani patal. tis vich dharti thap rakhi dharam sal. tis vich jia jugat ke rang. tin ke nam anek anant. karmi karmi hoe vichar. sacha ap sacha darbar. tithai sohan panch parvan. nadri karam pavai nisan. kach pakai othai pae. nanak gaia japai jae.",
+                translation: "Días solares y días lunares, estaciones, vientos, aguas, fuegos, inframundos. Sobre la tierra, Él colocó el refugio del Dharma. En ella habitan almas de todo tipo y color. Sus nombres son incontables. Todos serán considerados por sus actos. Él es la Verdad, su corte es verdadera. En ella, los auto-elegidos resplandecen belleza y perfección. En su visión, y por sus actos, obtienen la marca. Tanto los evolucionados como los inmaduros. Oh Nanak, una vez las cosas finalizan, se vuelven aparentes.",
+                essence: "Vive de acuerdo con el Dharma hoy, en armonía con los elementos.",
+                benefits: "Trae estabilidad y claridad sobre tu propósito.",
+                contemplation: "El Dharma es el refugio que sostiene toda vida.",
+                triad: { vibration: "Dharam", action: "Vivir", state: "Armonía" },
+                closure: "La corte divina evalúa por los actos, no por las palabras."
+            },
+            {
+                id: "pauri-35",
+                title: "Pauri 35",
+                gurmukhi: "ਧਰਮ ਖੰਡ ਕਾ ਏਹੋ ਧਰਮੁ ॥ ਗਿਆਨ ਖੰਡ ਕਾ ਆਖਹੁ ਕਰਮੁ ॥ ਕੇਤੇ ਪਵਣ ਪਾਣੀ ਵੈਸੰਤਰ ਕੇਤੇ ਕਾਨ ਮਹੇਸ ॥ ਕੇਤੇ ਬਰਮੇ ਘਾੜਤਿ ਘੜੀਅਹਿ ਰੂਪ ਰੰਗ ਕੇ ਵੇਸ ॥ ਕੇਤੀਆ ਕਰਮ ਭੂਮੀ ਮੇਰ ਕੇਤੇ ਕੇਤੇ ਧੂ ਉਪਦੇਸ ॥ ਕੇਤੇ ਇੰਦ ਚੰਦ ਸੂਰ ਕੇਤੇ ਕੇਤੇ ਮੰਡਲ ਦੇਸ ॥ ਕੇਤੇ ਸਿਧ ਬੁਧ ਨਾਥ ਕੇਤੇ ਕੇਤੇ ਦੇਵੀ ਵੇਸ ॥ ਕੇਤੇ ਦੇਵ ਦਾਨਵ ਮੁਨਿ ਕੇਤੇ ਕੇਤੇ ਰਤਨ ਸਮੁੰਦ ॥ ਕੇਤੀਆ ਖਾਣੀ ਕੇਤੀਆ ਬਾਣੀ ਕੇਤੇ ਪਾਤ ਨਿਰੰਧ ॥ ਕੇਤੀਆ ਸੁਰਤੀ ਸੇਵਕ ਕੇਤੇ ਨਾਨਕ ਅੰਤੁ ਨ ਅੰਤੁ ॥੩੫॥",
+                transcription: "dharam khand ka eho dharam. gian khand ka akhah karam. kete pavan pani baisantar kete kan mahes. kete barme gharat ghariah rup rang ke ves. ketia karam bhumi mer kete kete dhu upades. kete ind chand sur kete kete mandal des. kete sid budh nath kete kete devi ves. kete dev danav mun kete kete ratan samund. ketia khani ketia bani kete pat nirandh. ketia surti sevak kete nanak ant na ant.",
+                translation: "Habiendo descrito las esferas del dharma, hablemos ahora del dominio de la sabiduría espiritual y la acción. Cuántos vientos, aguas y fuegos, cuántos Krishnas y Shivas. Cuántos Brahmas fabricados, de tantas formas, colores y ropajes. Cuántos planetas y montañas donde las personas trabajan su karma. Cuántas son las lecciones de Dhurva (la compasión). Cuántos Indras, lunas y soles, cuántas galaxias y lugares. Cuántos magos, iluminados, maestros de yoga. Cuántas diosas vestidas de diferentes modos. Muchos son los dioses, muchos los demonios, muchos los santos silenciosos. Muchos los océanos de joyas. Son tantas las maneras de vivir, tantas las lenguas, tantas las dinastías reales. Tantos los modos de escuchar y de servir. Oh Nanak, no hay límite.",
+                essence: "Explora la diversidad de la creación hoy con asombro y respeto.",
+                benefits: "Te da la vitalidad que necesitas para cumplir con tu deber.",
+                contemplation: "La creación es infinita en su diversidad, pero unificada en su origen.",
+                triad: { vibration: "Gian", action: "Explorar", state: "Asombro" },
+                closure: "No hay límite para la diversidad de la creación divina."
+            },
+            {
+                id: "pauri-36",
+                title: "Pauri 36",
+                gurmukhi: "ਗਿਆਨ ਖੰਡ ਮਹਿ ਗਿਆਨੁ ਪਰਚੰਡੁ ॥ ਤਿਥੈ ਨਾਦ ਬਿਨੋਦ ਕੋਡ ਅਨੰਦੁ ॥ ਸਰਮ ਖੰਡ ਕੀ ਬਾਣੀ ਰੂਪੁ ॥ ਤਿਥੈ ਘਾੜਤਿ ਘੜੀਐ ਬਹੁਤੁ ਅਨੂਪੁ ॥ ਤਾ ਕੀਆ ਗਲਾ ਕਥੀਆ ਨ ਜਾਹਿ ॥ ਜੇ ਕੋ ਕਹੈ ਪਿਛੈ ਪਛੁਤਾਇ ॥ ਤਿਥੈ ਘੜੀਐ ਸੁਰਤਿ ਮਤਿ ਮਨਿ ਬੁਧਿ ॥ ਤਿਥੈ ਘੜੀਐ ਸੁਰਾ ਸਿਧਾ ਕੀ ਸੁਧਿ ॥੩੬॥",
+                transcription: "gian khand mah gian parchand. tithai nad binod kod anand. saram khand ki bani rup. tithai gharat ghariah bahut anup. ta kia gala kathia na jah. je ko kah piche pachuta. tithai ghariah surat mat man budh. tithai ghariah sura sida ki sudh.",
+                translation: "En las esferas del conocimiento espiritual, todo posee gran intensidad. Aquí residen naads (flujos del sonido), músicas deliciosas y visiones extasiantes. En los dominios de la realización espiritual, la palabra es preciosa. Y toda forma construida resulta bella. Dicho mundo no puede ser descrito. Si alguien lo intentara, se arrepentiría después. De este lugar provienen el poder de la escucha, la sabiduría y la intuición. De aquí surge la conciencia de los santos y los poderes psíquicos.",
+                essence: "Busca la belleza en la precisión de tus palabras hoy.",
+                benefits: "Concede el completo entendimiento de los cielos y la tierra.",
+                contemplation: "El conocimiento espiritual trasciende toda descripción.",
+                triad: { vibration: "Parchand", action: "Buscar", state: "Intensidad" },
+                closure: "La sabiduría verdadera es indescriptible."
+            },
+            {
+                id: "pauri-37",
+                title: "Pauri 37",
+                gurmukhi: "ਕਰਮ ਖੰਡ ਕੀ ਬਾਣੀ ਜੋਰੁ ॥ ਤਿਥੈ ਹੋਰੁ ਨ ਕੋਈ ਹੋਰੁ ॥ ਤਿਥੈ ਜੋਧ ਮਹਾਬਲ ਸੂਰ ॥ ਤਿਨ ਮਹਿ ਰਾਮੁ ਰਹਿਆ ਭਰਪੂਰ ॥ ਤਿਥੈ ਸੀਤੋ ਸੀਤਾ ਮਹਿਮਾ ਮਾਹਿ ॥ ਤਾ ਕੇ ਰੂਪ ਨ ਕਥਨੇ ਜਾਹਿ ॥ ਨਾ ਓਹਿ ਮਰਹਿ ਨ ਠਾਗੇ ਜਾਹਿ ॥ ਜਿਨ ਕੈ ਰਾਮੁ ਵਸੈ ਮਨ ਮਾਹਿ ॥ ਤਿਥੈ ਭਗਤਿ ਵਸਹਿ ਕੇ ਲੋਅ ॥ ਕਰਹਿ ਅਨੰਦੁ ਸਚਾ ਮਨਿ ਸੋਇ ॥ ਸਚ ਖੰਡਿ ਵਸੈ ਨਿਰੰਕਾਰੁ ॥ ਕਰਿ ਕਰਿ ਵੇਖੈ ਨਦਰਿ ਨਿਹਾਲ ॥ ਤਿਥੈ ਖੰਡ ਮੰਡਲ ਵਰਭੰਡ ॥ ਜੇ ਕੋ ਕਥੈ ਤ ਅੰਤੁ ਨ ਅੰਤੁ ॥ ਤਿਥੈ ਲੋਅ ਲੋਅ ਆਕਾਰ ॥ ਜਿਵ ਜਿਵ ਹੁਕਮੁ ਤਿਵੈ ਤਿਵ ਕਾਰ ॥ ਵੇਖੈ ਵਿਗਸੈ ਕਰਿ ਵੀਚਾਰੁ ॥ ਨਾਨਕ ਕਥਨਾ ਕਰੜਾ ਸਾਰੁ ॥੩੭॥",
+                transcription: "karam khand ki bani jor. tithai hor na koee hor. tithai jodh mahabal sur. tin mah ram rahia bharpur. tithai sito sita mahimā māh. tā ke rūp na kathane jāh. nā oh marah na thāge jāh. jin kai rām vasai man māh. tithai bhagat vasah ke loa. karah anand sachā man soe. sach khand vasai nirankār. kar kar vekhai nadar nihāl. tithai khand mandal varbhanda. je ko kathai ta ant na ant. tithai loa loa akār. jiv jiv hukam tivai tiv kār. vekhai vigasai kar vichār. nanak kathanā karadā sār.",
+                translation: "En las esferas de la Gracia, la palabra es poder. No otro tipo de palabra existe. Aquí residen guerreros y e imponentes soldados, plenos de Dios. Aquí residen mujeres calmas y llenas de gracia, cuya belleza es indescriptible. Ni mueren ni hallan obstáculos aquellos cuya mente no olvida a Dios. Aquí viven santos luminosos, rebosantes de éxtasis al experimentar al Uno en su mente. En las esferas de la verdad vive el Uno-Sin-Forma, que habiendo creado la creación, la contempla, y por cuya mirada, los seres son felices. Esferas, mundos, galaxias... ahí están. Si se trataran de describir, no encontraríamos el final. En ese lugar está la luz, los dominios, los cuerpos. Así Él lo ordena, así es la creación. Habiendo meditado profundamente, Él contempla y se regocija. Oh Nanak, esta descripción se me hace dura como el hierro.",
+                essence: "Habla con poder y verdad hoy, que tus palabras sean tu espada.",
+                benefits: "Corta el karma y elimina el impacto del mal karma.",
+                contemplation: "La Gracia transforma la palabra en poder creativo.",
+                triad: { vibration: "Karam", action: "Hablar", state: "Poder" },
+                closure: "La palabra de verdad es más fuerte que el hierro."
+            },
+            {
+                id: "pauri-38",
+                title: "Pauri 38",
+                gurmukhi: "ਜਤੁ ਪਾਹਾਰਾ ਧੀਰਜੁ ਸੁਨਿਆਰੁ ॥ ਅਹਰਣਿ ਮਤਿ ਵੇਦੁ ਹਥਿਆਰੁ ॥ ਭਉ ਖਲਾ ਅਗਨਿ ਤਪ ਤਾਉ ॥ ਭਾਂਡਾ ਭਾਉ ਅੰਮ੍ਰਿਤੁ ਤਿਤੁ ਢਾਲਿ ॥ ਘੜੀਐ ਸਬਦੁ ਸਚੀ ਤਕਸਾਲ ॥ ਜਿਨ ਕਉ ਨਦਰਿ ਕਰਮੁ ਤਿਨ ਕਾਰ ॥ ਨਾਨਕ ਨਦਰੀ ਨਦਰਿ ਨਿਹਾਲ ॥੩੮॥",
+                transcription: "jat pahara dhiraj suniar. aharan mat ved hatiar. bhau khala agan tap tao. bhanda bhau amrit tit dhal. ghariah sabad sachi taksal. jin kau nadar karam tin kar. nanak nadri nadar nihal.",
+                translation: "La fragua es la continencia (auto-control), el orfebre la paciencia. El yunque es el entendimiento y la sabiduría profunda, el instrumento. El fuelle es el miedo, y el fuego es la energía corporal. El amor es la olla de la que se extrae el néctar. El shabad (el flujo de la Palabra) es la verdadera moneda. Este karma sucede a quienes Él ha echado un vistazo. Oh Nanak, El Misericordioso, con su Mirada, nos llena de bendiciones.",
+                essence: "Forja tu carácter hoy con paciencia y autodisciplina.",
+                benefits: "Trae el poder de reescribir el propio destino.",
+                contemplation: "El alquimista espiritual transforma el miedo en fuego creativo.",
+                triad: { vibration: "Taksal", action: "Forjar", state: "Transformación" },
+                closure: "La mirada de gracia transforma todo en oro espiritual."
+            },
+            {
+                id: "salok-final",
+                title: "Salok Final",
+                gurmukhi: "ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ॥ ਦਿਵਸੁ ਰਾਤਿ ਦੁਇ ਦਾਈ ਦਾਇਆ ਖੇਲੈ ਸਗਲ ਜਗਤੁ ॥ ਚੰਗਿਆਈਆ ਬੁਰਿਆਈਆ ਵਾਚੈ ਧਰਮੁ ਹਦੂਰਿ ॥ ਕਰਮੀ ਆਪੋ ਆਪਣੀ ਕੇ ਨੇੜੈ ਕੇ ਦੂਰਿ ॥ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ॥ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ॥੧॥",
+                transcription: "pavan guru pani pita mata dharat mahat. divas rat due dai daia khelai sagal jagat. changaia buriaia vachai dharam hadur. karmi apo apani ke nere ke dur. jini nam dhiaia gae maskat ghal. nanak te mukh ujale keti chuti nal.",
+                translation: "El Aire es el Guru, el Agua es el Padre y la Tierra es la Gran Madre. El Día y la Noche, ambos cuidador y cuidadora, ponen a funcionar el universo entero. Las buenas y malas acciones serán evaluadas por uno mismo en presencia del Dharma. De acuerdo con sus propios actos, algunos estarán cerca y otros lejos. Aquellos que han dirigido su concentración en el Nombre, trabajando duro y pasando momentos difíciles. Oh Nanak, sus caras resplandecen y muchos serán liberados con ellos.",
+                essence: "Al final del día, entrega tus acciones al Universo con gratitud.",
+                benefits: "Te dará autoestima, elevación, reconocimiento y respeto.",
+                contemplation: "Los elementos son nuestros maestros y familiares.",
+                triad: { vibration: "Pavan Guru", action: "Entregar", state: "Liberación" },
+                closure: "Los rostros que meditan en el Nombre resplandecen con luz divina."
+            }
+        ];
+
+        // === SABIDURÍA DIVINA MONUMENTAL (BASE DE DATOS COMPLETA) ===
+        const WISDOM_DB = {
+            "mool-mantra": `
+                <h3>El Mool Mantra: La Raíz de la Existencia</h3>
+                <p>El Mool Mantra no es simplemente una colección de palabras; es la <strong>frecuencia base</strong> sobre la cual se construye todo el universo conocido y desconocido. Guru Nanak, en su estado de iluminación absoluta, no 'escribió' esto; lo canalizó como el sonido puro de la creación. Al recitarlo, no estás leyendo, estás sintonizando tu propia estructura molecular con la vibración original del Creador.</p>
+                <h4>Desglose Profundo:</h4>
+                <ul>
+                    <li><strong>Ek Ong Kar:</strong> La Unidad en la diversidad. No hay separación entre Dios y el mundo.</li>
+                    <li><strong>Sat Nam:</strong> La Verdad es tu única identidad. Todo lo demás es temporal.</li>
+                    <li><strong>Karta Purk:</strong> El Ser que Actúa. Dios es el único Actor.</li>
+                    <li><strong>Nirbo, Nirber:</strong> Sin Miedo, Sin Enemigos. El miedo nace de la dualidad.</li>
+                    <li><strong>Akal Murt, Ajuni, Sei Bang:</strong> Tu esencia es inmortal, no nacida y auto-iluminada.</li>
+                    <li><strong>Gur Prasad:</strong> Todo esto se realiza por la Gracia (Prasad).</li>
+                </ul>
+            `,
+            "jap-salok": `
+                <h3>Jap y Salok Inicial: El Mandato y la Verdad</h3>
+                <p><strong>Jap</strong> significa 'recitar' o 'meditar'. Es la orden de Guru Nanak para despertar. El Salok define la Verdad no como algo relativo, sino como lo único que permanece a través del tiempo: antes del tiempo, a través de las eras, ahora y siempre.</p>
+                <p>Esta sección destruye la ilusión de la temporalidad y nos ancla en lo que no muere. Cuando vibras <em>Aad Sach</em>, te conectas con el origen antes del Big Bang. Cuando vibras <em>Hai Bhi Sach</em>, traes esa verdad al momento presente.</p>
+            `,
+            "pauri-1": `
+                <h3>Pauri 1: El Desmantelamiento del Ego Ritualista</h3>
+                <p>En este primer peldaño, Guru Nanak confronta la pregunta más angustiante del corazón humano: <strong>¿Cómo podemos ser seres de Verdad (Sachiara)?</strong></p>
+                <h4>La Anatomía del Fracaso Humano</h4>
+                <p>Nanak enumera los cuatro intentos que el ego suele utilizar para purificarse: el intelecto analítico, el silencio forzado, la acumulación y la astucia mental. Explica que el pensamiento compulsivo es, de hecho, el ruido que nos separa de la Verdad.</p>
+                <h4>La Tecnología del Hukam</h4>
+                <p>La respuesta es <strong>Hukam Rajai Chalna</strong>. Caminar en armonía con la Voluntad Divina. Esto no es una resignación pasiva, sino una alineación cuántica.</p>
+            `,
+            "pauri-2": `
+                <h3>Pauri 2: La Ciencia de la Orden Cósmica</h3>
+                <p>Si el primer Pauri nos invita a seguir el <strong>Hukam</strong>, el segundo Pauri define qué es ese Hukam. Es la ley operativa de la existencia, una fuerza invisible pero absoluta.</p>
+                <h4>El Fin de la Autoría del Ego</h4>
+                <p>La culminación de este Pauri es la clave maestra: <strong>'Nanak jukme je buje, ta jome kaje na koe'</strong>. Si alguien realmente comprende el Hukam, el ego (Haumai) deja de hablar. Al ver la inmensidad del Hukam, la arrogancia se desvanece y surge una paz invulnerable.</p>
+            `,
+            "pauri-3": `
+                <h3>Pauri 3: La Sinfonía de la Percepción Divina</h3>
+                <p>Este Pauri es una exploración de cómo la humanidad intenta relacionarse con lo Inefable. Dios es un espejo infinito donde cada alma ve una faceta diferente.</p>
+                <h4>Veparvaju: La Dignidad del Dador</h4>
+                <p>La enseñanza central aquí es sobre la <strong>Providencia (Deda de)</strong>. El Dador da eternamente; nosotros, los receptores, somos los que nos cansamos de recibir. Dios no está estresado por mantener el universo; Él florece en un estado de gozo despreocupado.</p>
+            `,
+            "pauri-4": `
+                <h3>Pauri 4: El Lenguaje del Amor y el Amrit Vela</h3>
+                <p>Este pasaje es el corazón práctico de la disciplina diaria. Responde a cómo ganarse el favor de la Divinidad y entrar en Su Corte.</p>
+                <h4>El Lenguaje Universal</h4>
+                <p>Su lenguaje es el <em>Amor Infinito</em>. Dios no entiende de lógica o rituales mecánicos; solo el afecto puro abre las puertas. La moneda es la meditación en las horas ambrosiales (Amrit Vela).</p>
+            `,
+            "pauri-5": `
+                <h3>Pauri 5: El Guru como Fuente y la Trinidad Interior</h3>
+                <p>Este Pauri aborda la naturaleza de Dios y la función del Guru. Dios no puede ser "instalado" en un templo de piedra.</p>
+                <h4>La Omnipresencia del Guru</h4>
+                <p>El Guru es el <strong>Naad</strong> (el sonido sagrado), el Guru es la <strong>Sabiduría</strong>. El Guru reemplaza a todas las deidades mitológicas (Shiva, Brahma, Parvati). Todo lo que buscas fuera ya está contenido en la vibración de la Palabra del Guru.</p>
+            `,
+            "pauri-6": `
+                <h3>Pauri 6: La Alquimia de la Mente</h3>
+                <p>Guru Nanak confronta la creencia de que la purificación espiritual se logra mediante actos físicos externos, como los baños en ríos sagrados.</p>
+                <h4>Tesoros Ocultos</h4>
+                <p><strong>'Mat vich ratan javahar manik'</strong>. Dentro de tu propia inteligencia (Mati) residen gemas, joyas y rubíes. No son minerales, son las virtudes divinas latentes. Se desbloquean escuchando una sola instrucción del Guru.</p>
+            `,
+            "pauri-7": `
+                <h3>Pauri 7: La Futilidad de la Fama</h3>
+                <p>Este Pauri es un antídoto masivo contra la vanidad. Guru Nanak nos invita a imaginar el escenario máximo de éxito mundano para luego mostrarnos su futilidad.</p>
+                <h4>La Mirada de Gracia</h4>
+                <p>Si la Mirada de Gracia de Dios no está sobre ti, en el mundo del espíritu no eres nada. El valor de una alma no se mide por seguidores o poder, sino por su alineación interna con el Infinito.</p>
+            `,
+            "pauri-8": `
+                <h3>Pauri 8: Suniai - El Despertar del Poder</h3>
+                <p>Con el Pauri 8 comienza la serie técnica de <strong>Suniai</strong> (Escucha Profunda). No se trata de oír sonidos físicos, sino de absorber la vibración primordial.</p>
+                <h4>Vencer a la Muerte</h4>
+                <p><strong>'Sunie poje na sake kal'</strong>. El beneficio supremo: La muerte (Kal) no puede tocarte. El miedo desaparece porque quien escucha profundamente se conecta con aquello que nunca muere.</p>
+            `,
+            "pauri-9": `
+                <h3>Pauri 9: Suniai - Autoridad Divina</h3>
+                <p>El segundo Pauri de Suniai profundiza en cómo la escucha otorga la autoridad de los dioses y transforma la psique.</p>
+                <h4>La Transformación de la Negatividad</h4>
+                <p>Incluso aquellos que están llenos de amargura, si escuchan profundamente, sus bocas comienzan a alabar a Dios. La vibración divina actúa como un solvente que disuelve la negatividad.</p>
+            `,
+            "pauri-10": `
+                <h3>Pauri 10: Suniai - Virtudes Reales</h3>
+                <p>El tercer Pauri de Suniai se enfoca en los frutos morales que surgen naturalmente de la escucha.</p>
+                <h4>Sahaj Dhyan</h4>
+                <p>Nanak afirma que la escucha profunda lleva a la mente a un estado de <strong>Sahaj Dhyan</strong>, una meditación sin esfuerzo donde el alma se sumerge en Dios tan fácilmente como el agua fluye.</p>
+            `,
+            "pauri-11": `\n        <h3>Pauri 11: Suniai - Las Profundidades de la Virtud<\/h3>\n        <p>Este Pauri continúa la serie de <strong>Suniai<\/strong> (Escucha Profunda), revelando cómo la escucha pura nos sumerge en las profundidades de las virtudes divinas.<\/p>\n        <h4>El Poder de la Escucha Profunda<\/h4>\n        <p>Cuando escuchamos profundamente, no solo con los oídos sino con el corazón, nos convertimos en receptores de la sabiduría universal. La escucha transforma al oyente, elevándolo a estados de conciencia que normalmente requieren años de práctica espiritual.<\/p>\n        <h4>Lo Inalcanzable se Vuelve Accesible<\/h4>\n        <p><strong>\'Sunie hat hovai asgah\'<\/strong> - Escuchando, lo inalcanzable se vuelve accesible. Lo que parecía imposible de comprender o alcanzar se abre ante el que escucha con devoción.<\/p>\n    `,
+            "pauri-12": `\n        <h3>Pauri 12: Mannai - El Poder de la Aceptación<\/h3>\n        <p>Con el Pauri 12 comienza la serie de <strong>Mannai<\/strong> (Aceptación). Este es un cambio fundamental: de la escucha a la aceptación interna.<\/p>\n        <h4>La Aceptación Trasciende la Descripción<\/h4>\n        <p><strong>\'Mane ki gat kahi na jae\'<\/strong> - El estado de quien acepta no puede ser descrito. No porque sea indescriptible en sí, sino porque trasciende el lenguaje. Es una experiencia directa.<\/p>\n        <h4>La Pureza del Niranjan<\/h4>\n        <p>La aceptación purifica la conciencia, haciéndonos <strong>Niranjan<\/strong> - sin mancha, puros como el cristal. Esta pureza no viene de rituales externos, sino de la aceptación interna de la Realidad tal como es.<\/p>\n    `,
+            "pauri-13": `\n        <h3>Pauri 13: Mannai - Intuición y Conocimiento Universal<\/h3>\n        <p>Este Pauri profundiza en los frutos de la aceptación: la intuición y el conocimiento del universo entero.<\/p>\n        <h4>El Despertar de la Surat<\/h4>\n        <p><strong>\'Manne surat hovai man budh\'<\/strong> - Quien acepta desarrolla el poder de escuchar (surat) y una mente intuitiva (buddhi). Estas facultades nos permiten percibir más allá de los sentidos físicos.<\/p>\n        <h4>Libertad del Miedo<\/h4>\n        <p>La aceptación nos libera del miedo a la muerte y a la humillación. Cuando aceptamos la Realidad, nada puede perturbarnos porque vemos todo como parte del plan divino.<\/p>\n    `,
+            "pauri-14": `\n        <h3>Pauri 14: Mannai - El Camino Libre de Obstáculos<\/h3>\n        <p>Este Pauri describe cómo la aceptación crea un camino donde no había sendero, iluminando el viaje espiritual.<\/p>\n        <h4>El Honor de la Aceptación<\/h4>\n        <p><strong>\'Mane pat sio pargat jae\'<\/strong> - Quien acepta es radiante y honorable. La aceptación interna se manifiesta externamente como una presencia luminosa.<\/p>\n        <h4>El Abrazo del Dharma<\/h4>\n        <p>La aceptación nos conecta naturalmente con el Dharma - la ley cósmica que sostiene todo. No es un seguimiento forzado de reglas, sino una alineación espontánea con la verdad.<\/p>\n    `,
+            "pauri-15": `\n        <h3>Pauri 15: Mannai - La Puerta de la Liberación<\/h3>\n        <p>El quinto Pauri de Mannai revela el beneficio supremo: la liberación (Moksh) y la capacidad de salvar a otros también.<\/p>\n        <h4>La Décima Puerta<\/h4>\n        <p><strong>\'Mane pave mokh duar\'<\/strong> - Quien acepta abre las puertas de la liberación. Esta es la \'décima puerta\' (dasam duaar), el chakra coronario donde el alma se une con lo infinito.<\/p>\n        <h4>El No-Mendigo<\/h4>\n        <p>Quien acepta verdaderamente no vaga por el mundo como mendigo, pues ha encontrado la fuente interna de toda abundancia.<\/p>\n    `,
+            "pauri-16": `\n        <h3>Pauri 16: Los Cinco Elegidos y el Dharma<\/h3>\n        <p>Este Pauri introduce los conceptos de los <strong>Panch<\/strong> (Cinco) y el <strong>Dharam<\/strong> (Dharma), elementos fundamentales de la cosmovisión sikh.<\/p>\n        <h4>Los Cinco Elegidos<\/h4>\n        <p>Los Cinco representan las virtudes que sostienen la creación: la verdad, la compasión, la contentamiento, la humildad y el amor. Quien cultiva estas cualidades se vuelve \'parvan\' - aceptado en la corte divina.<\/p>\n        <h4>El Toro del Dharma<\/h4>\n        <p><strong>\'Dhaul dharam daia ka put\'<\/strong> - El Dharma es el toro que sostiene la tierra, hijo de la compasión. Esta metáfora poderosa nos recuerda que la justicia cósmica es compasiva y sostiene todo.<\/p>\n    `,
+            "pauri-17": `\n        <h3>Pauri 17: Lo Innumerable<\/h3>\n        <p>Este Pauri expande nuestra conciencia hacia lo innumerable (<strong>Asankh<\/strong>), desafiando nuestra mente limitada.<\/p>\n        <h4>La Inmensidad de la Creación<\/h4>\n        <p>Cantos, rituales, yoguis, devotos, héroes... todo es innumerable. La mente se cansa de contar, pero la creación sigue expandiéndose.<\/p>\n        <h4>Más Allá de las Prácticas<\/h4>\n        <p>Aunque las prácticas son innumerables, la esencia es una. No nos perdamos en la multiplicidad de métodos y olvidemos el objetivo: conectar con el Uno.<\/p>\n    `,
+            "pauri-18": `\n        <h3>Pauri 18: Las Sombras de lo Innumerable<\/h3>\n        <p>Este Pauri equilibra la visión mostrando que en lo innumerable también hay oscuridad: tontos, ladrones, asesinos, mentirosos.<\/p>\n        <h4>La Humildad de Nanak<\/h4>\n        <p><strong>\'Nanak nich kahai vichar\'<\/strong> - Nanak, el más bajo de todos, habla. Esta humildad nos recuerda que ante lo divino, todos somos pequeños.<\/p>\n        <h4>La Luz en la Oscuridad<\/h4>\n        <p>Aunque hay innumerables formas de oscuridad, la luz de la conciencia divina las transmuta todas. No nos definimos por nuestras sombras, sino por nuestra capacidad de recordar a Dios.<\/p>\n    `,
+            "pauri-19": `\n        <h3>Pauri 19: El Naam y el Sonido Cósmico<\/h3>\n        <p>Este Pauri revela la naturaleza del <strong>Naam<\/strong> (Nombre/Sonido Divino) como la base de toda existencia.<\/p>\n        <h4>El Sonido Primordial<\/h4>\n        <p><strong>\'Akkhari nam, akkhari salah\'<\/strong> - En el flujo del sonido están los nombres y las oraciones. El universo entero es vibración, y esa vibración es la manifestación del Naam.<\/p>\n        <h4>Más Allá del Sonido<\/h4>\n        <p><strong>\'Vin navai nahee ko thao\'<\/strong> - Sin el Naam, nada existe. El silencio desde el cual emerge todo sonido es la fuente última.<\/p>\n    `,
+            "pauri-20": `\n        <h3>Pauri 20: El Jabón del Nombre<\/h3>\n        <p>Este Pauri presenta una de las metáforas más bellas del Jap Ji: la mente como ropa que necesita ser lavada.<\/p>\n        <h4>La Suciedad de la Mente<\/h4>\n        <p>Así como el cuerpo se ensucia y necesita agua, la mente se ensucia con pensamientos negativos y necesita el \'jabón\' del Nombre.<\/p>\n        <h4>La Ley del Karma<\/h4>\n        <p><strong>\'Aape bij aape hi khah\'<\/strong> - Así siembras, así recoges. No hay escapatoria de esta ley cósmica. Pero el Nombre puede purificar hasta el karma más pesado.<\/p>\n    `,
+            "pauri-21": `\n        <h3>Pauri 21: El Misterio de la Creación<\/h3>\n        <p>Este Pauri nos sumerge en el misterio del origen del universo, una pregunta que ni los más grandes sabios pueden responder.<\/p>\n        <h4>El Tiempo de la Creación<\/h4>\n        <p>¿Cuál fue el día, la hora, el mes, la estación cuando todo comenzó? Ni los Puranas, ni el Corán, ni los yoguis lo saben.<\/p>\n        <h4>El Conocimiento Humilde<\/h4>\n        <p>El verdadero conocimiento reconoce su propia limitación. Solo el Creador conoce el momento de la creación.<\/p>\n    `,
+            "pauri-22": `\n        <h3>Pauri 22: La Unidad Trascendental<\/h3>\n        <p>Este Pauri revela que detrás de la multiplicidad de mundos y dimensiones, hay una única Esencia.<\/p>\n        <h4>El Uno Elemento<\/h4>\n        <p><strong>\'Asulu ik dhat\'<\/strong> - Al principio hubo un solo elemento. Todas las diferencias son manifestaciones de esta única sustancia.<\/p>\n        <h4>La Futilidad de la Descripción<\/h4>\n        <p>Si intentáramos describir todos los mundos, moriríamos escribiendo. La creación es infinita en su expresión, pero unificada en su origen.<\/p>\n    `,
+            "pauri-23": `\n        <h3>Pauri 23: La Hormiga y el Océano<\/h3>\n        <p>Este Pauri presenta una de las comparaciones más poderosas: una hormiga que recuerda a Dios vale más que un rey que lo olvida.<\/p>\n        <h4>El Océano de la Existencia<\/h4>\n        <p>Los ríos desembocan en el océano y pierden su identidad. Así el alma individual se disuelve en lo infinito.<\/p>\n        <h4>El Valor del Recuerdo<\/h4>\n        <p>No es el poder, la riqueza o el estatus lo que da valor a una vida, sino el recuerdo constante de Dios.<\/p>\n    `,
+            "pauri-24": `\n        <h3>Pauri 24: El Infinito sin Fin<\/h3>\n        <p>Este Pauri explora la naturaleza ilimitada de lo divino, desafiando nuestra comprensión lineal.<\/p>\n        <h4>Sin Final<\/h4>\n        <p>No hay final para las oraciones, para hacer o dar, para ver o escuchar. Lo divino es ilimitado en todas las direcciones.<\/p>\n        <h4>La Grandeza Inconmensurable<\/h4>\n        <p>Su Nombre es lo más alto de lo alto. Cuanto más profundizamos, más grande se vuelve nuestra comprensión de lo divino.<\/p>\n    `,
+            "pauri-25": `\n        <h3>Pauri 25: El Gran Dador<\/h3>\n        <p>Este Pauri celebra la naturaleza generosa de lo divino, que da incluso lo que no entendemos.<\/p>\n        <h4>La Avaricia Inexistente<\/h4>\n        <p><strong>\'Vada data til na tamae\'<\/strong> - El Gran Dador no tiene ni semilla de avaricia. Todo fluye desde una fuente inagotable.<\/p>\n        <h4>Reyes entre Reyes<\/h4>\n        <p>Aquellos bendecidos con prudencia y buenas cualidades son los verdaderos reyes, pues han recibido el regalo más preciado: la sabiduría.<\/p>\n    `,
+            "pauri-26": `\n        <h3>Pauri 26: Lo Inapreciable<\/h3>\n        <p>Este Pauri introduce el concepto de <strong>Amul<\/strong> - lo que no tiene precio, lo que no puede ser valorado.<\/p>\n        <h4>Más Allá de la Valoración<\/h4>\n        <p>Virtudes, negocios, tesoros, dharma, tronos... todo es inapreciable. Ninguna cantidad de dinero puede comprar la verdadera riqueza espiritual.<\/p>\n        <h4>El Tonto entre los Tontos<\/h4>\n        <p>Quien intenta describir lo indescriptible con palidas palabras, lleva escrito en su frente su propia necedad.<\/p>\n    `,
+            "pauri-27": `\n        <h3>Pauri 27: La Sinfonía Cósmica<\/h3>\n        <p>Este es quizás el Pauri más extenso y poético, describiendo la sinfonía de toda la creación cantando la gloria divina.<\/p>\n        <h4>Todo Canta<\/h4>\n        <p>El viento, el agua, el fuego, los dioses, los semidioses, los santos, los guerreros, los planetas, las galaxias... todo canta.<\/p>\n        <h4>El Emperador Supremo<\/h4>\n        <p><strong>\'So patshah saha patshahib\'<\/strong> - Ése es el Emperador, el Supremo Señor de todos los reyes. Él hace lo que le place; nada está por encima de Él.<\/p>\n    `,
+            "pauri-28": `\n        <h3>Pauri 28: El Yogui del Mundo<\/h3>\n        <p>Este Pauri describe al verdadero yogui: no el que se aísla en cuevas, sino el que conquista su mente en medio del mundo.<\/p>\n        <h4>Los Cinco Atributos<\/h4>\n        <p>Paciencia, modestia, meditación, castidad y fe. Estas son las herramientas del verdadero buscador espiritual.<\/p>\n        <h4>Conquista del Mundo<\/h4>\n        <p><strong>\'Man jitai jag jit\'<\/strong> - Conquista tu mente y conquistarás el mundo. La victoria interna se manifiesta como victoria externa.<\/p>\n    `,
+            "pauri-29": `\n        <h3>Pauri 29: La Protección Divina<\/h3>\n        <p>Este Pauri describe el escudo de protección que surge de la conexión con lo divino.<\/p>\n        <h4>El Placer de la Sabiduría<\/h4>\n        <p>Que tu placer sea la sabiduría y tu ayudante el cariño. En todos los corazones resuena la corriente del sonido divino.<\/p>\n        <h4>El Maestro de Maestros<\/h4>\n        <p>Solo Él es el Maestro, a quien todas las maestrías pertenecen. Todos los poderes y riquezas provienen de Él.<\/p>\n    `,
+            "pauri-30": `\n        <h3>Pauri 30: Los Tres Estudiantes<\/h3>\n        <p>Este Pauri presenta una alegoría de los tres estudiantes que representan los tres <strong>gunas<\/strong> o cualidades de la naturaleza.<\/p>\n        <h4>El Uno y la Madre<\/h4>\n        <p>La unión del Uno con la naturaleza (Maya) produce tres expresiones: el mundano (tamas), el organizador (rajas) y el que sostiene la corte (sattva).<\/p>\n        <h4>El Movimiento Divino<\/h4>\n        <p>Como a Él le plazca, así hace que las cosas se muevan. Él ve todo, mientras que otros no echan ni un vistazo.<\/p>\n    `,
+            "pauri-31": `\n        <h3>Pauri 31: La Creación Única<\/h3>\n        <p>Este Pauri celebra la singularidad de cada creación divina.<\/p>\n        <h4>Una Sola Vez<\/h4>\n        <p>Todo lo creado lo hace una sola vez, y no se repone. Cada momento, cada ser, cada experiencia es única e irrepetible.<\/p>\n        <h4>La Obra Verdadera<\/h4>\n        <p><strong>\'Nanak sache ki sachi kar\'<\/strong> - Oh Nanak, la obra del Uno Verdadero es verdadera. No hay falsedad en la creación divina.<\/p>\n    `,
+            "pauri-32": `\n        <h3>Pauri 32: La Multiplicación del Nombre<\/h3>\n        <p>Este Pauri revela el poder multiplicativo del Nombre divino.<\/p>\n        <h4>De Uno a Infinito<\/h4>\n        <p>De una boca surgen cien mil, y de cien mil surgen millones. El Nombre se multiplica infinitamente cuando se pronuncia con devoción.<\/p>\n        <h4>El Gusano que Añora<\/h4>\n        <p>Incluso los gusanos, al escuchar los asuntos etéreos, añoran volver a Casa. Todos los seres tienen nostalgia de su origen divino.<\/p>\n    `,
+            "pauri-33": `\n        <h3>Pauri 33: El Poder en Sus Manos<\/h3>\n        <p>Este Pauri es una humilde rendición ante el poder absoluto de lo divino.<\/p>\n        <h4>Sin Poder Propio<\/h4>\n        <p>No tenemos poder para hablar o callar, para dar o recibir, para vivir o morir. Todo poder pertenece al Uno.<\/p>\n        <h4>La Equidad Divina<\/h4>\n        <p><strong>\'Nanak utam nich na koe\'<\/strong> - Oh Nanak, nadie es alto o bajo por sí mismo. Todos somos iguales ante la mirada divina.<\/p>\n    `,
+            "pauri-34": `\n        <h3>Pauri 34: El Refugio del Dharma<\/h3>\n        <p>Este Pauri describe la tierra como el refugio del Dharma, donde todas las almas juegan sus roles.<\/p>\n        <h4>Los Elementos y las Almas<\/h4>\n        <p>Vientos, aguas, fuegos, inframundos... todos estos elementos sostienen la tierra, que a su vez sostiene la vida.<\/p>\n        <h4>La Corte Divina<\/h4>\n        <p>Él es la Verdad, su corte es verdadera. Los auto-elegidos resplandecen en ella por sus actos.<\/p>\n    `,
+            "pauri-35": `\n        <h3>Pauri 35: El Dominio del Conocimiento<\/h3>\n        <p>Este Pauri transita de las esferas del Dharma a las esferas del conocimiento espiritual.<\/p>\n        <h4>La Inmensidad de lo Creado<\/h4>\n        <p>Cuántos dioses, demonios, planetas, galaxias, lenguas, dinastías... No hay límite para la diversidad de la creación.<\/p>\n        <h4>El Conocimiento sin Fin<\/h4>\n        <p>El conocimiento espiritual es tan vasto como la creación misma. Cuantos más sabemos, más nos damos cuenta de lo mucho que ignoramos.<\/p>\n    `,
+            "pauri-36": `\n        <h3>Pauri 36: La Intensidad del Conocimiento<\/h3>\n        <p>Este Pauri describe las esferas del conocimiento espiritual como un lugar de intensidad extrema.<\/p>\n        <h4>Naad y Éxtasis<\/h4>\n        <p>Aquí residen los flujos del sonido divino, músicas celestiales y visiones extasiantes. El conocimiento espiritual no es seco intelecto, es experiencia viva.<\/p>\n        <h4>La Belleza Incomparable<\/h4>\n        <p>Toda forma construida en estas esferas resulta bella más allá de toda comparación. La belleza es una cualidad inherente al conocimiento divino.<\/p>\n    `,
+            "pauri-37": `\n        <h3>Pauri 37: Las Esferas de la Gracia<\/h3>\n        <p>Este Pauri describe las esferas del Karam (Gracia/Acción Divina), donde la palabra se vuelve poder.<\/p>\n        <h4>La Palabra Poderosa<\/h4>\n        <p>En estas esferas, la palabra tiene poder creativo. Lo que se dice se manifiesta. La palabra y la acción son una.<\/p>\n        <h4>Los Inmortales<\/h4>\n        <p>Los que habitan aquí ni mueren ni engañan. Su mente está llena de Dios, y eso los hace eternos.<\/p>\n    `,
+            "pauri-38": `\n        <h3>Pauri 38: La Forja Espiritual<\/h3>\n        <p>Este Pauri presenta la metáfora del alquimista/espiritual que forja su alma como un metal precioso.<\/p>\n        <h4>Los Elementos de la Forja<\/h4>\n        <p>La continencia es la fragua, la paciencia el orfebre, el entendimiento el yunque, el miedo el fuelle, el amor la olla del néctar.<\/p>\n        <h4>La Moneda del Shabad<\/h4>\n        <p><strong>\'Ghariah sabad sachi taksal\'<\/strong> - El Shabad es la verdadera moneda, acuñada en la ceca de la verdad. Esta es la riqueza que no se agota.<\/p>\n    `,
+            "salok-final": `\n        <h3>Salok Final: Los Elementos como Maestros<\/h3>\n        <p>El Salok Final cierra el Jap Ji Sahib con una enseñanza sobre los elementos como nuestros maestros y familiares.<\/p>\n        <h4>El Aire, el Guru<\/h4>\n        <p><strong>\'Pavan guru\'<\/strong> - El aire es el Guru. Cada respiración es una enseñanza, cada momento de vida es una oportunidad de aprendizaje.<\/p>\n        <h4>La Familia Cósmica<\/h4>\n        <p>El agua es el padre, la tierra es la gran madre. El día y la noche son nuestros cuidadores. Vivimos en una familia cósmica que nos sostiene.<\/p>\n        <h4>Los Rostros Resplandecientes<\/h4>\n        <p>Aquellos que han meditado en el Nombre, trabajando duro y pasando momentos difíciles, tienen rostros que resplandecen. Y muchos serán liberados con ellos.<\/p>\n    `
+        };
+
+        const app = {
+            state: { viewMode: 'list', currentIndex: 0, menuOpen: false },
+
+            init() { this.renderMenu(); },
+
+            enterExperience() {
+                const cover = document.getElementById('cover'); cover.style.opacity = '0';
+                setTimeout(() => {
+                    cover.classList.add('hidden');
+                    document.getElementById('navbar').classList.remove('-translate-y-full');
+                    const contentViewer = document.getElementById('content-viewer');
+                    contentViewer.classList.remove('hidden');
+                    requestAnimationFrame(() => contentViewer.classList.remove('opacity-0'));
+                    this.setViewMode('list');
+                }, 1000);
+            },
+
+            toggleMenu() {
+                this.state.menuOpen = !this.state.menuOpen;
+                const sidebar = document.getElementById('sidebar');
+                this.state.menuOpen ? sidebar.classList.remove('translate-x-full') : sidebar.classList.add('translate-x-full');
+            },
+
+            renderMenu() {
+                const menu = document.getElementById('menu-items');
+                menu.innerHTML = TEXT_DATA.map((item, index) => 
+                    `<button onclick="app.goToSection(${index})" class="w-full text-left px-4 py-3 rounded-md hover:bg-gold/10 text-gray-300 hover:text-gold transition-colors font-body text-sm border-b border-white/5 uppercase tracking-wide font-bold">${item.title}</button>`
+                ).join('') + `<div class="mt-8 pt-4 border-t border-gold/20"><p class="text-xs text-gray-500 text-center font-title">Wahe Guru Ji Ka Khalsa<br>Wahe Guru Ji Ki Fateh</p></div>`;
+            },
+
+            setViewMode(mode) {
+                this.state.viewMode = mode;
+                const container = document.getElementById('render-area');
+                if (this.state.menuOpen) this.toggleMenu();
+
+                if (mode === 'list') {
+                    nav = document.getElementById('contemplation-nav'); nav.classList.remove('flex'); nav.classList.add('hidden');
+                    container.innerHTML = TEXT_DATA.map((item, index) => this.createCardHTML(item, index)).join('');
+                    setTimeout(() => this.attachAccordionListeners(), 100);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    nav = document.getElementById('contemplation-nav'); nav.classList.remove('hidden'); nav.classList.add('flex');
+                    this.renderContemplationCard();
+                }
+            },
+
+            createCardHTML(item, index) {
+                return `
+                    <div class="mb-16 glass-panel rounded-lg overflow-hidden shadow-2xl fade-in border-t-2 border-gold/30">
+                        <div class="p-8 md:p-10 border-b border-white/5 bg-gradient-to-b from-paper to-void">
+                            <h2 class="font-title text-3xl md:text-4xl text-gold text-center mb-4 tracking-widest uppercase">${item.title}</h2>
+                            <div class="w-24 h-1 bg-gold/50 mx-auto mb-8"></div>
+                            <div class="font-gurmukhi text-2xl md:text-3xl text-center leading-loose text-white mb-8 select-none" style="text-shadow: 0 0 15px rgba(212,175,55,0.3);">${item.gurmukhi.replace(/\n/g, '<br>')}</div>
+                            <div class="font-body text-lg text-center text-gray-400 italic mb-4 font-light tracking-wide">${item.transcription.replace(/\n/g, '<br>')}</div>
+                        </div>
+                        <div class="bg-void/60">
+                            ${this.createAccordion('Traducción al Español', item.translation, true)}
+                            ${this.createAccordion('APLICACIÓN PRÁCTICA INMEDIATA', item.essence, true)}
+                            ${this.createAccordion('Beneficios', item.benefits)}
+                            ${this.createAccordion('Contemplación extendida', item.contemplation)}
+                            
+                            <div class="p-8 border-t border-white/10 mt-4 space-y-6">
+                                <div id="wisdom-container-${index}">
+                                    <button onclick="app.openWisdom(${index})" class="w-full relative overflow-hidden group bg-gradient-to-r from-void to-paper border border-mystic/40 hover:border-mystic/80 text-mystic-light hover:text-white font-title tracking-widest text-sm uppercase py-5 px-6 rounded transition-all duration-500 shadow-lg flex items-center justify-center gap-3">
+                                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-mystic/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                                        <svg class="w-6 h-6 text-mystic" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                        <span class="text-white font-bold">Sabiduría Divina Extendida (x10)</span>
+                                    </button>
+                                </div>
+                                <div id="infographic-container-${index}">
+                                    <button onclick="app.generateInfographic(${index})" class="w-full relative overflow-hidden group bg-gradient-to-r from-void to-paper border border-watercolor-2/30 hover:border-watercolor-2/60 text-watercolor-2/80 hover:text-watercolor-2 font-title tracking-widest text-sm uppercase py-5 px-6 rounded transition-all duration-500 shadow-lg flex items-center justify-center gap-3">
+                                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-watercolor-2/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                                        <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                        <span>Generar Infografía Celestial</span>
+                                    </button>
+                                </div>
+                                <div id="poster-btn-container-${index}">
+                                    <button onclick="app.generatePoster(${index})" class="w-full relative overflow-hidden group bg-gradient-to-r from-void to-paper border border-gold/30 hover:border-gold/60 text-gold-dim hover:text-gold font-title tracking-widest text-sm uppercase py-5 px-6 rounded transition-all duration-500 shadow-lg flex items-center justify-center gap-3">
+                                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-gold/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                                        <svg class="w-6 h-6 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                        <span>GENERAR POSTER ESPIRITUAL</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+            createAccordion(title, content, italic = false) {
+                const style = italic ? "italic border-l-2 border-gold pl-4" : "text-justify";
+                return `<div class="border-b border-white/5"><button class="accordion-btn w-full px-8 py-5 flex justify-between items-center text-left hover:bg-white/5 transition-colors focus:outline-none group"><span class="font-title text-gold-dim group-hover:text-gold text-sm tracking-widest uppercase transition-colors font-bold">${title}</span><svg class="w-5 h-5 text-gold/50 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button><div class="accordion-content hidden px-8 pb-8 pt-2 bg-black/20"><div class="font-body text-gray-200 leading-relaxed text-lg ${style}">${content}</div></div></div>`;
+            },
+            async openWisdom(index) {
+                const item = TEXT_DATA[index];
+                const modal = document.getElementById('wisdom-modal');
+                const content = document.getElementById('wisdom-content');
+                modal.classList.remove('hidden');
+                content.innerHTML = `<div class="text-center animate-pulse py-32"><div class="loader-ring mb-6 scale-150"></div><p class="font-title text-gold text-xl tracking-widest mt-4">Invocando Sabiduría Sagrada Monumental...</p></div>`;
+                await new Promise(r => setTimeout(r, 1500));
+                const expandedText = WISDOM_DB[item.id] || `<h3>Sabiduría de ${item.title}</h3><p>La profundidad de este pasaje está siendo revelada en esta versión monumental. Contiene la clave vibratoria de: <strong>${item.essence}</strong>. Al recitar estas palabras sagradas con plena conciencia, sintonizas tu campo electromagnético con la frecuencia de la verdad absoluta.</p>`;
+                content.innerHTML = expandedText;
+            },
+            closeWisdom() { document.getElementById('wisdom-modal').classList.add('hidden'); },
+            async generateInfographic(index) {
+                const container = document.getElementById(`infographic-container-${index}`);
+                const item = TEXT_DATA[index];
+                const triad = item.triad || { vibration: "Naam", action: "Meditación", state: "Paz" };
+                const closure = item.closure || "La luz divina ilumina el camino.";
+                container.innerHTML = `<div class="bg-gray-900/50 p-6 rounded-lg text-center animate-pulse"><p class="font-title text-watercolor-2 text-sm tracking-widest">GENERANDO...</p></div>`;
+                await new Promise(r => setTimeout(r, 1500));
+                container.innerHTML = `<div class="watercolor-card p-10 rounded-lg fade-in relative overflow-hidden group text-center"><div class="watercolor-blob bg-watercolor-1 top-0 right-0 w-40 h-40 blur-3xl"></div><div class="watercolor-blob bg-watercolor-2 bottom-0 left-0 w-40 h-40 blur-3xl"></div><div class="relative z-10"><p class="font-hand text-5xl text-white/90 mb-8">${item.title}</p><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"><div class="info-box"><div class="info-title">VIBRACIÓN</div><div class="info-content text-watercolor-1 font-bold uppercase">${triad.vibration}</div></div><div class="info-box"><div class="info-title">ACCIÓN</div><div class="info-content text-watercolor-2 font-bold uppercase">${triad.action}</div></div><div class="info-box"><div class="info-title">ESTADO</div><div class="info-content text-watercolor-3 font-bold uppercase">${triad.state}</div></div></div><p class="info-footer-phrase">"${closure}"</p><div class="mt-8"><div class="om-symbol">🕉️</div></div></div></div><div class="mt-4 text-center"><button onclick="app.resetInfographic(${index})" class="text-xs text-gray-500 uppercase hover:text-white tracking-widest">Cerrar Visualización</button></div>`;
+            },
+            resetInfographic(index) {
+                document.getElementById(`infographic-container-${index}`).innerHTML = `<button onclick="app.generateInfographic(${index})" class="w-full relative overflow-hidden group bg-gradient-to-r from-void to-paper border border-watercolor-2/30 hover:border-watercolor-2/60 text-watercolor-2/80 hover:text-watercolor-2 font-title tracking-widest text-sm uppercase py-5 px-6 rounded transition-all duration-500 shadow-lg flex items-center justify-center gap-3"><span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-watercolor-2/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span><svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><span>Generar Infografía Celestial</span></button>`;
+            },
+            async generatePoster(index) {
+                const modal = document.getElementById('poster-modal'); const content = document.getElementById('poster-content'); const item = TEXT_DATA[index];
+                modal.classList.remove('hidden');
+                content.innerHTML = `<div class="text-center"><div class="loader-ring mb-4 scale-125"></div><p class="font-title text-gold animate-pulse tracking-widest mt-4">Creando Arte Espiritual...</p></div>`;
+                await new Promise(r => setTimeout(r, 2000));
+                content.innerHTML = `<div class="poster-container p-10 shadow-2xl relative"><div class="poster-circle"></div><div class="relative z-10 flex flex-col h-full justify-between py-10 text-center"><h2 class="font-poster text-5xl text-white mb-4 uppercase tracking-widest text-shadow-glow">${item.title}</h2><div class="w-32 h-1 bg-gold mx-auto my-6"></div><div class="my-auto"><p class="font-gurmukhi text-3xl text-gold/90 leading-relaxed mb-6">${item.gurmukhi.substring(0, 100)}...</p><p class="font-hand text-3xl text-purple-200 mt-6 font-light">"${item.essence}"</p></div><div class="mt-10 pt-6 border-t border-gold/20 text-gold/50 text-sm font-title tracking-[0.5em] uppercase">Jap Ji Sahib • El Canto del Alma</div></div></div>`;
+            },
+            closePoster() { document.getElementById('poster-modal').classList.add('hidden'); },
+            downloadPoster() { alert("Simulando descarga de póster."); },
+            renderContemplationCard() {
+                const container = document.getElementById('render-area'); const item = TEXT_DATA[this.state.currentIndex];
+                document.getElementById('progress-indicator').innerText = item.title.toUpperCase();
+                container.innerHTML = this.createCardHTML(item, this.state.currentIndex);
+                setTimeout(() => { this.attachAccordionListeners(); }, 50);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            },
+            nextCard() { if (this.state.currentIndex < TEXT_DATA.length - 1) { this.state.currentIndex++; this.renderContemplationCard(); } },
+            prevCard() { if (this.state.currentIndex > 0) { this.state.currentIndex--; this.renderContemplationCard(); } },
+            goToSection(index) { this.state.currentIndex = index; this.toggleMenu(); this.state.viewMode === 'contemplation' ? this.renderContemplationCard() : this.setViewMode('contemplation'); },
+            goHome() {
+                const cv = document.getElementById('content-viewer'); cv.classList.add('opacity-0');
+                setTimeout(() => { cv.classList.add('hidden'); document.getElementById('navbar').classList.add('-translate-y-full'); const cover = document.getElementById('cover'); cover.classList.remove('hidden'); requestAnimationFrame(() => cover.style.opacity = '1'); }, 500);
+            },
+            attachAccordionListeners() {
+                document.querySelectorAll('.accordion-btn').forEach(btn => {
+                    const newBtn = btn.cloneNode(true); btn.parentNode.replaceChild(newBtn, btn);
+                    newBtn.addEventListener('click', function() {
+                        const content = this.nextElementSibling; const icon = this.querySelector('svg');
+                        const isHidden = content.classList.contains('hidden');
+                        content.classList.toggle('hidden', !isHidden); content.classList.toggle('fade-in', isHidden);
+                        icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+                        this.classList.toggle('bg-white/5', isHidden); this.querySelector('span').classList.toggle('text-gold', isHidden);
+                    });
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => { app.init(); });
+    </script>
+</body>
+</html>
